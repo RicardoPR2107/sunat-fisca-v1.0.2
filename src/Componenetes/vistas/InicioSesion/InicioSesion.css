@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+
+.contenedor-principal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.contenedor-secundario {
+  display: flex;
+  width: 60%;
+  max-width: 1200px;
+  height: 600px;
+  border-radius: 20px;
+  border: 2px solid #ced4da;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.contenedor-formulario {
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-content {
+  text-align: left; /* Alineación a la izquierda */
+  padding-left: 15%; /* Ajuste para alinear con el inicio de .input (70% width centrado) */
+  -webkit-user-select: none; /* Para Safari */
+  -moz-user-select: none; /* Para Firefox */
+  -ms-user-select: none; /* Para IE/Edge */
+  user-select: none; /* Estándar */
+}
+
+.logo {
+  width: 200px;
+  margin: 0 auto 0px 60px; /* Centrado con leve desplazamiento a la izquierda */
+  display: block;
+}
+
+h2 {
+  margin: 0 0 10px 0;
+  font-size: 40px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 900; /* Bold para "Bienvenido" */
+  -webkit-user-select: none; /* Para Safari */
+  -moz-user-select: none; /* Para Firefox */
+  -ms-user-select: none; /* Para IE/Edge */
+  user-select: none; /* Estándar */
+}
+
+p {
+  color: #6c757d;
+  margin: 0 0 20px 0;
+  font-size: 16px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 500; /* Regular para el párrafo */
+  width: 80%; /* Ancho igual al de los .input */
+  overflow-wrap: break-word; /* Permite que el texto se desplace hacia abajo si no cabe */
+  -webkit-user-select: none; /* Para Safari */
+  -moz-user-select: none; /* Para Firefox */
+  -ms-user-select: none; /* Para IE/Edge */
+  user-select: none; /* Estándar */
+}
+
+.input {
+  width: 75%;
+  padding: 10px;
+  margin: 0 0 10px 0; /* Margen solo abajo para alinear con el texto */
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  display: block;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400; /* Regular para los placeholders */
+  font-size: 14px;
+}
+
+.password-container {
+  position: relative;
+  width: 80%; /* Ajustado al ancho de .input */
+  display: inline-block;
+}
+
+.password-container .input {
+  width: 100%;
+  box-sizing: border-box; /* Asegura que padding no afecte el ancho total */
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-80%); /* Centrado verticalmente */
+  cursor: pointer;
+  color: #6c757d;
+  font-size: 16px;
+  line-height: 1; /* Asegura que el ícono no se desplace */
+}
+
+.checkbox-container {
+  margin: 10px 0;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 8px; /* Espacio entre el checkbox y el texto */
+}
+
+label {
+  margin: 0;
+  text-align: left;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400; /* Regular para la etiqueta */
+  -webkit-user-select: none; /* Para Safari */
+  -moz-user-select: none; /* Para Firefox */
+  -ms-user-select: none; /* Para IE/Edge */
+  user-select: none; /* Estándar */
+}
+
+.boton-ingresar {
+  width: 70%;
+  padding: 10px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin: 20px auto 0; /* Centrado con margen superior */
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400; /* Regular para el botón */
+  display: block;
+}
+
+.contenedor-fondo {
+  width: 50%;
+  height: 100%;
+  background-image: url("../../../Imagenes/fondo-login.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Estilo para el mensaje de error */
+.error-message {
+  width: 70%;
+  margin: 10px auto 0;
+  padding: 10px;
+  color: #dc3545;
+  background-color: #f8d7da;
+  border-radius: 5px;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Estilo para el mensaje de éxito */
+.success-message {
+  width: 70%;
+  margin: 10px auto 0;
+  padding: 10px;
+  color: #28a745;
+  background-color: #d4edda;
+  border-radius: 5px;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
