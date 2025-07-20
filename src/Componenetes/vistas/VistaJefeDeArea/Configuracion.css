@@ -1,0 +1,861 @@
+/* ===== ESTILOS CONFIGURACIÓN - VISTA JEFE DE ÁREA ===== */
+/* Prefijo único: vista-jefe-area-configuracion- */
+
+.vista-jefe-area-configuracion {
+  padding: 20px;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  font-family: "Nunito", sans-serif;
+  box-sizing: border-box;
+}
+
+/* CONTENEDOR PRINCIPAL QUE ENVUELVE TODO EL CONTENIDO */
+.vista-jefe-area-configuracion-main-container {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 2px solid #d1d5db;
+  margin: 10px 0;
+  width: calc(100% - 40px);
+  max-width: calc(100% - 40px);
+  margin-left: 20px;
+  margin-right: 20px;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.vista-jefe-area-configuracion-cards-wrapper {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: nowrap;
+  max-width: 100%;
+  height: auto;
+}
+
+.vista-jefe-area-configuracion-left-cards,
+.vista-jefe-area-configuracion-right-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: calc(50% - 10px);
+  min-width: 0;
+}
+
+.vista-jefe-area-configuracion-card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.vista-jefe-area-configuracion-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.06);
+  border-color: #d1d5db;
+}
+
+/* TARJETAS ESPECÍFICAS */
+.vista-jefe-area-configuracion-card1 {
+  min-height: 520px;
+}
+
+.vista-jefe-area-configuracion-card2 {
+  min-height: 260px;
+}
+
+.vista-jefe-area-configuracion-card3 {
+  min-height: 290px;
+}
+
+.vista-jefe-area-configuracion-card4 {
+  min-height: 490px;
+}
+
+.vista-jefe-area-configuracion-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.vista-jefe-area-configuracion-card-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.vista-jefe-area-configuracion-card:hover
+  .vista-jefe-area-configuracion-card-icon {
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+.vista-jefe-area-configuracion-card-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.vista-jefe-area-configuracion-card-title h3 {
+  font-size: 20px;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  color: #1f2937;
+  transition: color 0.3s ease;
+}
+
+.vista-jefe-area-configuracion-card:hover
+  .vista-jefe-area-configuracion-card-title
+  h3 {
+  color: #6366f1;
+}
+
+.vista-jefe-area-configuracion-card-title p {
+  color: #6b7280;
+  margin: 5px 0 0 0;
+  font-size: 13px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+}
+
+.vista-jefe-area-configuracion-label {
+  display: block;
+  margin-bottom: 6px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  color: #374151;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.vista-jefe-area-configuracion-card:hover .vista-jefe-area-configuracion-label {
+  color: #1f2937;
+}
+
+.vista-jefe-area-configuracion-input {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-family: "Nunito", sans-serif;
+  background: linear-gradient(145deg, #f8fafc, #ffffff);
+  font-size: 14px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+
+.vista-jefe-area-configuracion-input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  background: #ffffff;
+  transform: translateY(-1px);
+}
+
+.vista-jefe-area-configuracion-input:hover {
+  border-color: #d1d5db;
+  background: #ffffff;
+}
+
+.vista-jefe-area-configuracion-update-button {
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  width: 100%;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  margin-top: auto;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.vista-jefe-area-configuracion-update-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.vista-jefe-area-configuracion-update-button:hover {
+  background: linear-gradient(135deg, #4f46e5, #3730a3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+.vista-jefe-area-configuracion-update-button:hover::before {
+  left: 100%;
+}
+
+.vista-jefe-area-configuracion-update-button:active {
+  transform: translateY(0);
+}
+
+/* PREFERENCIAS */
+.vista-jefe-area-configuracion-preference-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: linear-gradient(145deg, #f8fafc, #ffffff);
+  border-radius: 12px;
+  border: 1px solid #f1f5f9;
+  transition: all 0.3s ease;
+}
+
+.vista-jefe-area-configuracion-preference-item:hover {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.vista-jefe-area-configuracion-preference-text {
+  flex: 1;
+}
+
+.vista-jefe-area-configuracion-preference-text strong {
+  display: block;
+  margin-bottom: 4px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #1f2937;
+}
+
+.vista-jefe-area-configuracion-preference-text p {
+  margin: 0;
+  color: #6b7280;
+  font-family: "Nunito", sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.vista-jefe-area-configuracion-switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+
+.vista-jefe-area-configuracion-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.vista-jefe-area-configuracion-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(145deg, #e5e7eb, #d1d5db);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 24px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.vista-jefe-area-configuracion-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.vista-jefe-area-configuracion-switch
+  input:checked
+  + .vista-jefe-area-configuracion-slider {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.vista-jefe-area-configuracion-switch
+  input:checked
+  + .vista-jefe-area-configuracion-slider:before {
+  transform: translateX(24px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* TIPOS DE ACTIVIDADES */
+.vista-jefe-area-configuracion-activity-items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vista-jefe-area-configuracion-activity-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(145deg, #f8fafc, #ffffff);
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border-left: 4px solid transparent;
+}
+
+.vista-jefe-area-configuracion-activity-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.vista-jefe-area-configuracion-activity-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12), 0 4px 15px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+}
+
+.vista-jefe-area-configuracion-activity-item:hover::before {
+  left: 100%;
+}
+
+.vista-jefe-area-configuracion-purple-border {
+  border-left-color: #8b5cf6;
+}
+
+.vista-jefe-area-configuracion-purple-border:hover {
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.2),
+    0 4px 15px rgba(139, 92, 246, 0.1);
+  background: linear-gradient(135deg, #f3f0ff, #ffffff);
+}
+
+.vista-jefe-area-configuracion-green-border {
+  border-left-color: #10b981;
+}
+
+.vista-jefe-area-configuracion-green-border:hover {
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.2),
+    0 4px 15px rgba(16, 185, 129, 0.1);
+  background: linear-gradient(135deg, #f0fdf4, #ffffff);
+}
+
+.vista-jefe-area-configuracion-blue-border {
+  border-left-color: #3b82f6;
+}
+
+.vista-jefe-area-configuracion-blue-border:hover {
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2),
+    0 4px 15px rgba(59, 130, 246, 0.1);
+  background: linear-gradient(135deg, #eff6ff, #ffffff);
+}
+
+.vista-jefe-area-configuracion-activity-item span {
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #1f2937;
+  transition: color 0.3s ease;
+}
+
+.vista-jefe-area-configuracion-activity-item:hover span {
+  color: #111827;
+  font-weight: 600;
+}
+
+.vista-jefe-area-configuracion-activity-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vista-jefe-area-configuracion-active-button {
+  background: linear-gradient(145deg, #d1fae5, #a7f3d0);
+  color: #059669;
+  border: 1px solid #10b981;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.vista-jefe-area-configuracion-active-button:hover {
+  background: linear-gradient(145deg, #a7f3d0, #6ee7b7);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.vista-jefe-area-configuracion-gear-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+  background: linear-gradient(145deg, #ffffff, #f1f5f9);
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.vista-jefe-area-configuracion-gear-icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  border-radius: 50%;
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.vista-jefe-area-configuracion-gear-icon:hover {
+  background: linear-gradient(145deg, #f8fafc, #e5e7eb);
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15), 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-color: #d1d5db;
+}
+
+.vista-jefe-area-configuracion-gear-icon:hover::before {
+  transform: translateX(100%);
+}
+
+.vista-jefe-area-configuracion-gear-icon:active {
+  transform: translateY(0) scale(1.05);
+  transition: all 0.1s ease;
+}
+
+.vista-jefe-area-configuracion-gear-icon svg {
+  width: 18px;
+  height: 18px;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+  z-index: 1;
+}
+
+.vista-jefe-area-configuracion-gear-icon:hover svg {
+  transform: rotate(180deg) scale(1.1);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* SEGURIDAD */
+.vista-jefe-area-configuracion-security-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+}
+
+.vista-jefe-area-configuracion-password-fields-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.vista-jefe-area-configuracion-password-field {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+}
+
+.vista-jefe-area-configuracion-password-field
+  .vista-jefe-area-configuracion-label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.vista-jefe-area-configuracion-password-field
+  .vista-jefe-area-configuracion-input {
+  margin-bottom: 0;
+  background: linear-gradient(145deg, #f8fafc, #ffffff);
+}
+
+.vista-jefe-area-configuracion-requirements-box {
+  background: linear-gradient(145deg, #f8fafc, #ffffff);
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 8px;
+  transition: all 0.3s ease;
+}
+
+.vista-jefe-area-configuracion-requirements-box:hover {
+  background: #ffffff;
+  border-color: #d1d5db;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.vista-jefe-area-configuracion-requirements-title {
+  color: #6366f1;
+  font-weight: 600;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+}
+
+.vista-jefe-area-configuracion-requirements-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vista-jefe-area-configuracion-requirements-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  color: #6366f1;
+  font-size: 13px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+}
+
+.vista-jefe-area-configuracion-requirements-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.vista-jefe-area-configuracion-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.vista-jefe-area-configuracion-change-password-button {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 14px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
+  cursor: pointer;
+  min-width: 250px;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.vista-jefe-area-configuracion-change-password-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.vista-jefe-area-configuracion-change-password-button:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
+}
+
+.vista-jefe-area-configuracion-change-password-button:hover::before {
+  left: 100%;
+}
+
+.vista-jefe-area-configuracion-change-password-button:active {
+  transform: translateY(0);
+}
+
+/* RESPONSIVE DESIGN PROFESIONAL */
+@media (max-width: 1400px) {
+  .vista-jefe-area-configuracion {
+    padding: 18px;
+  }
+
+  .vista-jefe-area-configuracion-main-container {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .vista-jefe-area-configuracion {
+    padding: 16px;
+  }
+
+  .vista-jefe-area-configuracion-main-container {
+    padding: 18px;
+  }
+
+  .vista-jefe-area-configuracion-cards-wrapper {
+    gap: 16px;
+  }
+
+  .vista-jefe-area-configuracion-left-cards,
+  .vista-jefe-area-configuracion-right-cards {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .vista-jefe-area-configuracion-cards-wrapper {
+    flex-direction: column;
+  }
+
+  .vista-jefe-area-configuracion-left-cards,
+  .vista-jefe-area-configuracion-right-cards {
+    width: 100%;
+  }
+
+  .vista-jefe-area-configuracion-password-fields-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .vista-jefe-area-configuracion-password-field {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .vista-jefe-area-configuracion {
+    padding: 12px;
+  }
+
+  .vista-jefe-area-configuracion-main-container {
+    padding: 16px;
+    border-radius: 12px;
+    width: calc(100% - 24px);
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  .vista-jefe-area-configuracion-card {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .vista-jefe-area-configuracion-card-title h3 {
+    font-size: 18px;
+  }
+
+  .vista-jefe-area-configuracion-card-title p {
+    font-size: 12px;
+  }
+
+  .vista-jefe-area-configuracion-card-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .vista-jefe-area-configuracion-activity-item {
+    padding: 12px 16px;
+  }
+
+  .vista-jefe-area-configuracion-activity-item span {
+    font-size: 13px;
+  }
+
+  .vista-jefe-area-configuracion-gear-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .vista-jefe-area-configuracion-gear-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Efectos reducidos para móvil */
+  .vista-jefe-area-configuracion-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .vista-jefe-area-configuracion-activity-item:hover {
+    transform: translateY(-1px);
+  }
+}
+
+@media (max-width: 480px) {
+  .vista-jefe-area-configuracion {
+    padding: 8px;
+  }
+
+  .vista-jefe-area-configuracion-main-container {
+    padding: 12px;
+    border-radius: 10px;
+    width: calc(100% - 16px);
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  .vista-jefe-area-configuracion-card {
+    padding: 16px;
+    border-radius: 10px;
+  }
+
+  .vista-jefe-area-configuracion-card-title h3 {
+    font-size: 16px;
+  }
+
+  .vista-jefe-area-configuracion-card-title p {
+    font-size: 11px;
+  }
+
+  .vista-jefe-area-configuracion-card-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .vista-jefe-area-configuracion-input {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .vista-jefe-area-configuracion-update-button,
+  .vista-jefe-area-configuracion-change-password-button {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .vista-jefe-area-configuracion-change-password-button {
+    min-width: 200px;
+  }
+
+  .vista-jefe-area-configuracion-activity-item {
+    padding: 10px 12px;
+    border-radius: 8px;
+  }
+
+  .vista-jefe-area-configuracion-activity-item span {
+    font-size: 12px;
+  }
+
+  .vista-jefe-area-configuracion-gear-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .vista-jefe-area-configuracion-gear-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .vista-jefe-area-configuracion-preference-item {
+    padding: 12px;
+  }
+
+  .vista-jefe-area-configuracion-preference-text strong {
+    font-size: 14px;
+  }
+
+  .vista-jefe-area-configuracion-preference-text p {
+    font-size: 12px;
+  }
+
+  /* Efectos mínimos en móviles pequeños */
+  .vista-jefe-area-configuracion-card:hover {
+    transform: translateY(-1px);
+  }
+
+  .vista-jefe-area-configuracion-activity-item:hover {
+    transform: none;
+  }
+
+  .vista-jefe-area-configuracion-gear-icon:hover {
+    transform: translateY(-1px) scale(1.05);
+  }
+}
+
+/* OPTIMIZACIÓN PARA IMPRESIÓN */
+@media print {
+  .vista-jefe-area-configuracion {
+    background-color: white;
+    padding: 10px;
+  }
+
+  .vista-jefe-area-configuracion-main-container {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    background: white;
+  }
+
+  .vista-jefe-area-configuracion-card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    background: white;
+  }
+
+  .vista-jefe-area-configuracion-update-button,
+  .vista-jefe-area-configuracion-change-password-button {
+    background: #333 !important;
+  }
+}

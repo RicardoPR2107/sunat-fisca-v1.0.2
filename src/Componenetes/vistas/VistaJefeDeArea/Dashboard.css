@@ -1,0 +1,1130 @@
+/* ESTILOS DASHBOARD VISTA JEFE DE ÁREA - SIN INTERFERENCIA */
+.vista-jefe-area-dashboard {
+  padding: 20px;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  font-family: "Nunito", sans-serif;
+}
+
+/* CONTENEDOR PRINCIPAL QUE ENVUELVE TODO EL CONTENIDO */
+.vista-jefe-area-main-container {
+  background-color: #f8fafc;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  margin-top: 10px;
+}
+
+/* HEADER SECTION CON EFECTOS 3D */
+.vista-jefe-area-header-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+.vista-jefe-area-header-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.vista-jefe-area-btn-exportar {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.vista-jefe-area-btn-exportar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.vista-jefe-area-btn-exportar:hover {
+  background: linear-gradient(135deg, #4f46e5, #3730a3);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+.vista-jefe-area-btn-exportar:hover::before {
+  left: 100%;
+}
+
+.vista-jefe-area-dashboard h2 {
+  font-size: 24px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+/* STATS CARDS CON EFECTOS 3D ESPECTACULARES */
+.vista-jefe-area-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.vista-jefe-area-stat-card {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08), 0 3px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+  min-height: 140px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.vista-jefe-area-stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(99, 102, 241, 0.08),
+    transparent
+  );
+  transition: left 0.6s ease;
+  z-index: 0;
+}
+
+.vista-jefe-area-stat-card:hover {
+  background: linear-gradient(145deg, #f8fafc, #ffffff);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12), 0 8px 25px rgba(0, 0, 0, 0.08);
+  border-color: rgba(99, 102, 241, 0.2);
+}
+
+.vista-jefe-area-stat-card:hover::before {
+  left: 100%;
+}
+
+.vista-jefe-area-stat-card h3 {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.vista-jefe-area-stat-card:hover h3 {
+  color: #8b5cf6;
+}
+
+.vista-jefe-area-stat-card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.vista-jefe-area-stat-card-left {
+  flex: 1;
+}
+
+.vista-jefe-area-stat-card p {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1f2937;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.vista-jefe-area-stat-card:hover p {
+  color: #6366f1;
+}
+
+.vista-jefe-area-stat-card .vista-jefe-area-sub-text {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.vista-jefe-area-stat-card .vista-jefe-area-sub-text.green {
+  color: #10b981;
+}
+
+.vista-jefe-area-stat-card .vista-jefe-area-sub-text.red {
+  color: #ef4444;
+}
+
+.vista-jefe-area-stat-card:hover .vista-jefe-area-sub-text.green {
+  color: #059669;
+}
+
+.vista-jefe-area-stat-card:hover .vista-jefe-area-sub-text.red {
+  color: #dc2626;
+}
+
+.vista-jefe-area-stat-card-icon {
+  width: 55px;
+  height: 55px;
+  margin-left: 15px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.1));
+}
+
+.vista-jefe-area-stat-card:hover .vista-jefe-area-stat-card-icon {
+  transform: scale(1.1) rotate(5deg);
+  filter: drop-shadow(0 6px 15px rgba(0, 0, 0, 0.2));
+}
+
+.vista-jefe-area-stat-card-icon.large {
+  width: 55px;
+  height: 55px;
+}
+
+/* MAIN CONTENT CON EFECTOS 3D */
+.vista-jefe-area-main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.vista-jefe-area-rendimiento-section,
+.vista-jefe-area-actividades-section {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08), 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.vista-jefe-area-rendimiento-section::before,
+.vista-jefe-area-actividades-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(99, 102, 241, 0.02),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vista-jefe-area-rendimiento-section:hover,
+.vista-jefe-area-actividades-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12), 0 6px 20px rgba(0, 0, 0, 0.08);
+  border-color: rgba(99, 102, 241, 0.15);
+}
+
+.vista-jefe-area-rendimiento-section:hover::before,
+.vista-jefe-area-actividades-section:hover::before {
+  opacity: 1;
+}
+
+.vista-jefe-area-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.vista-jefe-area-section-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.vista-jefe-area-rendimiento-section:hover .vista-jefe-area-section-header h3,
+.vista-jefe-area-actividades-section:hover .vista-jefe-area-section-header h3 {
+  color: #6366f1;
+}
+
+.vista-jefe-area-ver-detalles {
+  color: #6366f1;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.vista-jefe-area-ver-detalles:hover {
+  color: #4f46e5;
+  text-decoration: underline;
+  transform: translateX(3px);
+}
+
+/* SUPERVISOR ITEM CON EFECTOS 3D */
+.vista-jefe-area-supervisor-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px;
+  background: linear-gradient(145deg, #f8fafc, #ffffff);
+  border-radius: 12px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.vista-jefe-area-supervisor-item:hover {
+  background: linear-gradient(145deg, #f0f8ff, #ffffff);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.15);
+  transform: translateY(-2px) scale(1.01);
+  border-color: rgba(99, 102, 241, 0.2);
+}
+
+.vista-jefe-area-supervisor-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vista-jefe-area-supervisor-item:hover .vista-jefe-area-supervisor-avatar {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.vista-jefe-area-supervisor-info {
+  flex: 1;
+}
+
+.vista-jefe-area-supervisor-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 2px;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.vista-jefe-area-supervisor-item:hover .vista-jefe-area-supervisor-name {
+  color: #6366f1;
+}
+
+.vista-jefe-area-supervisor-count {
+  font-size: 12px;
+  color: #6b7280;
+  font-family: "Nunito", sans-serif;
+}
+
+.vista-jefe-area-supervisor-percentage {
+  font-size: 18px;
+  font-weight: 700;
+  color: #10b981;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.vista-jefe-area-supervisor-item:hover .vista-jefe-area-supervisor-percentage {
+  color: #059669;
+}
+
+.vista-jefe-area-supervisor-efficiency {
+  font-size: 12px;
+  color: #6b7280;
+  font-family: "Nunito", sans-serif;
+}
+
+/* ACTIVIDADES LIST CON EFECTOS SUTILES (NO 3D PARA EVITAR LAG) */
+.vista-jefe-area-actividades-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.vista-jefe-area-actividad-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.vista-jefe-area-actividad-item:hover {
+  transform: translateX(2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.vista-jefe-area-actividad-item.completed {
+  background: linear-gradient(145deg, #ecfdf5, #f0fdf4);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.vista-jefe-area-actividad-item.completed:hover {
+  background: linear-gradient(145deg, #d1fae5, #ecfdf5);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.vista-jefe-area-actividad-item.pending {
+  background: linear-gradient(145deg, #fef2f2, #fef7f7);
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.vista-jefe-area-actividad-item.pending:hover {
+  background: linear-gradient(145deg, #fee2e2, #fef2f2);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.vista-jefe-area-actividad-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.vista-jefe-area-actividad-item:hover .vista-jefe-area-actividad-icon {
+  transform: scale(1.1);
+}
+
+.vista-jefe-area-actividad-icon.completed {
+  background-color: #10b981;
+}
+
+.vista-jefe-area-actividad-icon.pending {
+  background-color: #ef4444;
+}
+
+.vista-jefe-area-actividad-info {
+  flex: 1;
+}
+
+.vista-jefe-area-actividad-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 2px;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.2s ease;
+}
+
+.vista-jefe-area-actividad-item:hover .vista-jefe-area-actividad-title {
+  color: #6366f1;
+}
+
+.vista-jefe-area-actividad-subtitle {
+  font-size: 12px;
+  color: #6b7280;
+  font-family: "Nunito", sans-serif;
+}
+
+/* BOTTOM SECTIONS CON EFECTOS 3D */
+.vista-jefe-area-bottom-sections {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.vista-jefe-area-tipos-actividades,
+.vista-jefe-area-estado-personal,
+.vista-jefe-area-acciones-rapidas {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08), 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.vista-jefe-area-tipos-actividades::before,
+.vista-jefe-area-estado-personal::before,
+.vista-jefe-area-acciones-rapidas::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(99, 102, 241, 0.02),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vista-jefe-area-tipos-actividades:hover,
+.vista-jefe-area-estado-personal:hover,
+.vista-jefe-area-acciones-rapidas:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12), 0 6px 20px rgba(0, 0, 0, 0.08);
+  border-color: rgba(99, 102, 241, 0.15);
+}
+
+.vista-jefe-area-tipos-actividades:hover::before,
+.vista-jefe-area-estado-personal:hover::before,
+.vista-jefe-area-acciones-rapidas:hover::before {
+  opacity: 1;
+}
+
+.vista-jefe-area-tipos-actividades h3,
+.vista-jefe-area-estado-personal h3,
+.vista-jefe-area-acciones-rapidas h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 20px;
+  font-family: "Nunito", sans-serif;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.vista-jefe-area-tipos-actividades:hover h3,
+.vista-jefe-area-estado-personal:hover h3,
+.vista-jefe-area-acciones-rapidas:hover h3 {
+  color: #6366f1;
+}
+
+/* LISTS CON EFECTOS SUTILES (NO 3D PARA EVITAR LAG) */
+.vista-jefe-area-actividades-tipos-list,
+.vista-jefe-area-estado-personal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.vista-jefe-area-actividad-tipo-item,
+.vista-jefe-area-estado-personal-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  background: rgba(99, 102, 241, 0.02);
+  border: 1px solid rgba(99, 102, 241, 0.05);
+}
+
+.vista-jefe-area-actividad-tipo-item:hover,
+.vista-jefe-area-estado-personal-item:hover {
+  background: rgba(99, 102, 241, 0.05);
+  transform: translateX(2px);
+  border-color: rgba(99, 102, 241, 0.1);
+}
+
+.vista-jefe-area-actividad-tipo-name,
+.vista-jefe-area-estado-personal-name {
+  font-size: 14px;
+  color: #374151;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.2s ease;
+}
+
+.vista-jefe-area-actividad-tipo-item:hover .vista-jefe-area-actividad-tipo-name,
+.vista-jefe-area-estado-personal-item:hover
+  .vista-jefe-area-estado-personal-name {
+  color: #6366f1;
+}
+
+.vista-jefe-area-actividad-tipo-count,
+.vista-jefe-area-estado-personal-count {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+  font-family: "Nunito", sans-serif;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  min-width: 24px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.vista-jefe-area-actividad-tipo-item:hover
+  .vista-jefe-area-actividad-tipo-count,
+.vista-jefe-area-estado-personal-item:hover
+  .vista-jefe-area-estado-personal-count {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.2);
+}
+
+/* ACCIONES RÁPIDAS CON EFECTOS 3D */
+.vista-jefe-area-acciones-rapidas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.vista-jefe-area-accion-button {
+  padding: 14px 18px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.vista-jefe-area-accion-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.4s ease;
+}
+
+.vista-jefe-area-accion-button:hover::before {
+  left: 100%;
+}
+
+.vista-jefe-area-accion-button.primary {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.vista-jefe-area-accion-button.primary:hover {
+  background: linear-gradient(135deg, #4f46e5, #3730a3);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+.vista-jefe-area-accion-button.success {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.vista-jefe-area-accion-button.success:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+}
+
+.vista-jefe-area-accion-button.purple {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: white;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.vista-jefe-area-accion-button.purple:hover {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+}
+
+/* RESPONSIVE PERFECTO Y PROFESIONAL */
+@media (max-width: 1400px) {
+  .vista-jefe-area-dashboard {
+    padding: 18px;
+  }
+
+  .vista-jefe-area-main-container {
+    padding: 22px;
+  }
+
+  .vista-jefe-area-stats {
+    gap: 18px;
+  }
+
+  .vista-jefe-area-main-content,
+  .vista-jefe-area-bottom-sections {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .vista-jefe-area-dashboard {
+    padding: 16px;
+  }
+
+  .vista-jefe-area-main-container {
+    padding: 20px;
+  }
+
+  .vista-jefe-area-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .vista-jefe-area-stat-card {
+    padding: 20px;
+    min-height: 120px;
+  }
+
+  .vista-jefe-area-stat-card p {
+    font-size: 28px;
+  }
+
+  .vista-jefe-area-stat-card-icon {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .vista-jefe-area-main-content {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .vista-jefe-area-bottom-sections {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .vista-jefe-area-rendimiento-section,
+  .vista-jefe-area-actividades-section,
+  .vista-jefe-area-tipos-actividades,
+  .vista-jefe-area-estado-personal,
+  .vista-jefe-area-acciones-rapidas {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .vista-jefe-area-dashboard {
+    padding: 14px;
+  }
+
+  .vista-jefe-area-stats {
+    gap: 14px;
+  }
+
+  .vista-jefe-area-stat-card {
+    padding: 18px;
+    min-height: 110px;
+  }
+
+  .vista-jefe-area-stat-card p {
+    font-size: 26px;
+  }
+
+  .vista-jefe-area-stat-card h3 {
+    font-size: 13px;
+  }
+
+  .vista-jefe-area-supervisor-item {
+    padding: 16px;
+  }
+
+  .vista-jefe-area-supervisor-avatar {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vista-jefe-area-dashboard {
+    padding: 12px;
+  }
+
+  .vista-jefe-area-main-container {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .vista-jefe-area-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .vista-jefe-area-stat-card {
+    padding: 16px;
+    min-height: 100px;
+  }
+
+  .vista-jefe-area-stat-card p {
+    font-size: 24px;
+  }
+
+  .vista-jefe-area-stat-card-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .vista-jefe-area-header-section {
+    margin-bottom: 20px;
+  }
+
+  .vista-jefe-area-btn-exportar {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  .vista-jefe-area-section-header h3 {
+    font-size: 16px;
+  }
+
+  .vista-jefe-area-supervisor-item {
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .vista-jefe-area-supervisor-avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .vista-jefe-area-actividad-item {
+    padding: 12px 14px;
+  }
+
+  /* Reducir efectos en móvil para mejor performance */
+  .vista-jefe-area-stat-card:hover {
+    transform: translateY(-3px) scale(1.01);
+  }
+
+  .vista-jefe-area-supervisor-item:hover {
+    transform: translateY(-1px) scale(1.005);
+  }
+
+  .vista-jefe-area-actividad-item:hover {
+    transform: translateX(1px);
+  }
+
+  .vista-jefe-area-accion-button:hover {
+    transform: translateY(-1px) scale(1.01);
+  }
+}
+
+@media (max-width: 640px) {
+  .vista-jefe-area-dashboard {
+    padding: 10px;
+  }
+
+  .vista-jefe-area-header-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .vista-jefe-area-header-buttons {
+    justify-content: center;
+  }
+
+  .vista-jefe-area-stat-card {
+    padding: 14px;
+  }
+
+  .vista-jefe-area-stat-card p {
+    font-size: 22px;
+  }
+
+  .vista-jefe-area-stat-card h3 {
+    font-size: 12px;
+  }
+
+  .vista-jefe-area-stat-card-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .vista-jefe-area-rendimiento-section,
+  .vista-jefe-area-actividades-section,
+  .vista-jefe-area-tipos-actividades,
+  .vista-jefe-area-estado-personal,
+  .vista-jefe-area-acciones-rapidas {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vista-jefe-area-dashboard {
+    padding: 8px;
+  }
+
+  .vista-jefe-area-main-container {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .vista-jefe-area-stats {
+    gap: 10px;
+  }
+
+  .vista-jefe-area-stat-card {
+    padding: 12px;
+    min-height: 90px;
+  }
+
+  .vista-jefe-area-stat-card p {
+    font-size: 20px;
+  }
+
+  .vista-jefe-area-stat-card h3 {
+    font-size: 11px;
+  }
+
+  .vista-jefe-area-stat-card-icon {
+    width: 36px;
+    height: 36px;
+    margin-left: 10px;
+  }
+
+  .vista-jefe-area-btn-exportar {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .vista-jefe-area-rendimiento-section,
+  .vista-jefe-area-actividades-section,
+  .vista-jefe-area-tipos-actividades,
+  .vista-jefe-area-estado-personal,
+  .vista-jefe-area-acciones-rapidas {
+    padding: 16px;
+  }
+
+  .vista-jefe-area-section-header h3,
+  .vista-jefe-area-tipos-actividades h3,
+  .vista-jefe-area-estado-personal h3,
+  .vista-jefe-area-acciones-rapidas h3 {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .vista-jefe-area-supervisor-item {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .vista-jefe-area-supervisor-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .vista-jefe-area-supervisor-name {
+    font-size: 14px;
+  }
+
+  .vista-jefe-area-supervisor-count {
+    font-size: 11px;
+  }
+
+  .vista-jefe-area-supervisor-percentage {
+    font-size: 15px;
+  }
+
+  .vista-jefe-area-supervisor-efficiency {
+    font-size: 11px;
+  }
+
+  .vista-jefe-area-actividad-item {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .vista-jefe-area-actividad-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .vista-jefe-area-actividad-title {
+    font-size: 12px;
+  }
+
+  .vista-jefe-area-actividad-subtitle {
+    font-size: 11px;
+  }
+
+  .vista-jefe-area-actividad-tipo-item,
+  .vista-jefe-area-estado-personal-item {
+    padding: 6px 10px;
+  }
+
+  .vista-jefe-area-actividad-tipo-name,
+  .vista-jefe-area-estado-personal-name {
+    font-size: 12px;
+  }
+
+  .vista-jefe-area-actividad-tipo-count,
+  .vista-jefe-area-estado-personal-count {
+    font-size: 12px;
+    padding: 3px 6px;
+  }
+
+  .vista-jefe-area-accion-button {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+
+  /* Efectos mínimos en móviles muy pequeños */
+  .vista-jefe-area-stat-card:hover {
+    transform: translateY(-2px) scale(1.005);
+  }
+
+  .vista-jefe-area-supervisor-item:hover,
+  .vista-jefe-area-actividad-item:hover {
+    transform: translateX(1px);
+  }
+
+  .vista-jefe-area-accion-button:hover {
+    transform: translateY(-1px) scale(1.005);
+  }
+
+  .vista-jefe-area-rendimiento-section:hover,
+  .vista-jefe-area-actividades-section:hover,
+  .vista-jefe-area-tipos-actividades:hover,
+  .vista-jefe-area-estado-personal:hover,
+  .vista-jefe-area-acciones-rapidas:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 360px) {
+  .vista-jefe-area-dashboard {
+    padding: 6px;
+  }
+
+  .vista-jefe-area-main-container {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .vista-jefe-area-stat-card {
+    padding: 10px;
+    min-height: 80px;
+  }
+
+  .vista-jefe-area-stat-card p {
+    font-size: 18px;
+  }
+
+  .vista-jefe-area-stat-card h3 {
+    font-size: 10px;
+  }
+
+  .vista-jefe-area-stat-card-icon {
+    width: 32px;
+    height: 32px;
+    margin-left: 8px;
+  }
+
+  .vista-jefe-area-rendimiento-section,
+  .vista-jefe-area-actividades-section,
+  .vista-jefe-area-tipos-actividades,
+  .vista-jefe-area-estado-personal,
+  .vista-jefe-area-acciones-rapidas {
+    padding: 14px;
+  }
+
+  .vista-jefe-area-section-header h3,
+  .vista-jefe-area-tipos-actividades h3,
+  .vista-jefe-area-estado-personal h3,
+  .vista-jefe-area-acciones-rapidas h3 {
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+
+  .vista-jefe-area-supervisor-item {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .vista-jefe-area-supervisor-avatar {
+    width: 28px;
+    height: 28px;
+  }
+
+  .vista-jefe-area-supervisor-name {
+    font-size: 13px;
+  }
+
+  .vista-jefe-area-supervisor-percentage {
+    font-size: 14px;
+  }
+
+  .vista-jefe-area-actividad-item {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+
+  .vista-jefe-area-actividad-icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .vista-jefe-area-actividad-title {
+    font-size: 11px;
+  }
+
+  .vista-jefe-area-actividad-subtitle {
+    font-size: 10px;
+  }
+
+  .vista-jefe-area-accion-button {
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+}

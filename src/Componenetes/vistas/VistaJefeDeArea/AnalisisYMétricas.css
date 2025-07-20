@@ -1,0 +1,1157 @@
+/* ===== ESTILOS ANÁLISIS Y MÉTRICAS - VISTA JEFE DE ÁREA ===== */
+/* Prefijo único: vista-jefe-area-analisis-metricas- */
+
+.vista-jefe-area-analisis-metricas {
+  padding: 20px;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  font-family: "Nunito", sans-serif;
+  box-sizing: border-box;
+}
+
+/* CONTENEDOR PRINCIPAL QUE ENVUELVE TODO EL CONTENIDO */
+.vista-jefe-area-analisis-metricas-main-container {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 2px solid #d1d5db;
+  margin: 10px 0;
+  width: calc(100% - 40px);
+  max-width: calc(100% - 40px);
+  margin-left: 20px;
+  margin-right: 20px;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.vista-jefe-area-analisis-metricas-main-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+/* HEADER SECTION CON EFECTOS PROFESIONALES */
+.vista-jefe-area-analisis-metricas-header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  margin-top: 8px;
+  position: relative;
+  z-index: 2;
+}
+
+.vista-jefe-area-analisis-metricas-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.vista-jefe-area-analisis-metricas-period-selector {
+  padding: 14px 18px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+  background: linear-gradient(145deg, #ffffff, #f9fafb);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
+  color: #1f2937;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  outline: none;
+}
+
+.vista-jefe-area-analisis-metricas-period-selector:focus,
+.vista-jefe-area-analisis-metricas-period-selector:hover {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.vista-jefe-area-analisis-metricas-btn-exportar {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.vista-jefe-area-analisis-metricas-btn-exportar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.vista-jefe-area-analisis-metricas-btn-exportar:hover {
+  background: linear-gradient(135deg, #4f46e5, #3730a3);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+}
+
+.vista-jefe-area-analisis-metricas-btn-exportar:hover::before {
+  left: 100%;
+}
+
+.vista-jefe-area-analisis-metricas-btn-exportar:active {
+  transform: translateY(-1px);
+}
+
+/* STATS CARDS CON EFECTOS 3D OPTIMIZADOS */
+.vista-jefe-area-analisis-metricas-stats-cards {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 2;
+  align-items: stretch;
+}
+
+.vista-jefe-area-analisis-metricas-stat-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  position: relative;
+  min-height: 120px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  overflow: hidden;
+  border: 1px solid #f1f5f9;
+  flex: 1;
+  min-width: 0;
+}
+
+.vista-jefe-area-analisis-metricas-stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.05),
+    rgba(139, 92, 246, 0.03)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 16px;
+}
+
+.vista-jefe-area-analisis-metricas-stat-card:hover {
+  background: #ffffff;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: #e5e7eb;
+}
+
+.vista-jefe-area-analisis-metricas-stat-card:hover::before {
+  opacity: 1;
+}
+
+.vista-jefe-area-analisis-metricas-stat-card h3 {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 14px;
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+  letter-spacing: 0.3px;
+}
+
+.vista-jefe-area-analisis-metricas-stat-card:hover h3 {
+  color: #6366f1;
+  transform: translateX(2px);
+}
+
+.vista-jefe-area-analisis-metricas-stat-card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.vista-jefe-area-analisis-metricas-stat-card-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.vista-jefe-area-analisis-metricas-stat-card p {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #1f2937;
+  font-family: "Nunito", sans-serif;
+  line-height: 1.1;
+  transition: all 0.3s ease;
+}
+
+.vista-jefe-area-analisis-metricas-stat-card:hover p {
+  color: #6366f1;
+  transform: scale(1.05);
+}
+
+.vista-jefe-area-analisis-metricas-sub-text {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s ease;
+  padding: 2px 0;
+}
+
+.vista-jefe-area-analisis-metricas-sub-text.green {
+  color: #10b981;
+}
+
+.vista-jefe-area-analisis-metricas-sub-text.red {
+  color: #ef4444;
+}
+
+.vista-jefe-area-analisis-metricas-sub-text.blue {
+  color: #3b82f6;
+}
+
+.vista-jefe-area-analisis-metricas-stat-card:hover
+  .vista-jefe-area-analisis-metricas-sub-text {
+  transform: translateX(2px);
+}
+
+.vista-jefe-area-analisis-metricas-stat-card-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.vista-jefe-area-analisis-metricas-stat-card:hover
+  .vista-jefe-area-analisis-metricas-stat-card-icon {
+  transform: scale(1.15) rotate(5deg);
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.2));
+}
+
+/* MAIN CONTENT CON DISEÑO MEJORADO */
+.vista-jefe-area-analisis-metricas-main-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.vista-jefe-area-analisis-metricas-distribucion-section {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #f1f5f9;
+}
+
+.vista-jefe-area-analisis-metricas-distribucion-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+}
+
+.vista-jefe-area-analisis-metricas-distribucion-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-color: #e5e7eb;
+}
+
+.vista-jefe-area-analisis-metricas-distribucion-section:hover::before {
+  opacity: 1;
+}
+
+.vista-jefe-area-analisis-metricas-rendimiento-section {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #f1f5f9;
+}
+
+.vista-jefe-area-analisis-metricas-rendimiento-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+}
+
+.vista-jefe-area-analisis-metricas-rendimiento-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-color: #e5e7eb;
+}
+
+.vista-jefe-area-analisis-metricas-rendimiento-section:hover::before {
+  opacity: 1;
+}
+
+.vista-jefe-area-analisis-metricas-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.vista-jefe-area-analisis-metricas-section-header h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.vista-jefe-area-analisis-metricas-distribucion-section:hover
+  .vista-jefe-area-analisis-metricas-section-header
+  h3,
+.vista-jefe-area-analisis-metricas-rendimiento-section:hover
+  .vista-jefe-area-analisis-metricas-section-header
+  h3 {
+  color: #6366f1;
+}
+
+/* TABLA CON EFECTOS OPTIMIZADOS (SIN LAG) */
+.vista-jefe-area-analisis-metricas-distribucion-table {
+  width: 100%;
+  border-collapse: collapse;
+  position: relative;
+  z-index: 1;
+  table-layout: fixed;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.vista-jefe-area-analisis-metricas-distribucion-table th {
+  background: linear-gradient(145deg, #f8fafc, #f1f5f9);
+  padding: 12px 6px;
+  text-align: left;
+  font-size: 9px;
+  font-weight: 700;
+  color: #475569;
+  border-bottom: 2px solid #e2e8f0;
+  font-family: "Nunito", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  white-space: normal;
+  word-wrap: break-word;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  line-height: 1.2;
+}
+
+.vista-jefe-area-analisis-metricas-distribucion-table th:nth-child(1) {
+  width: 26%;
+}
+.vista-jefe-area-analisis-metricas-distribucion-table th:nth-child(2) {
+  width: 16%;
+  text-align: center;
+}
+.vista-jefe-area-analisis-metricas-distribucion-table th:nth-child(3) {
+  width: 16%;
+  text-align: center;
+}
+.vista-jefe-area-analisis-metricas-distribucion-table th:nth-child(4) {
+  width: 26%;
+  text-align: center;
+}
+.vista-jefe-area-analisis-metricas-distribucion-table th:nth-child(5) {
+  width: 16%;
+  text-align: center;
+}
+
+.vista-jefe-area-analisis-metricas-distribucion-table td {
+  padding: 12px 6px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 11px;
+  font-family: "Nunito", sans-serif;
+  transition: background-color 0.2s ease;
+  vertical-align: middle;
+}
+
+.vista-jefe-area-analisis-metricas-distribucion-table td:nth-child(2),
+.vista-jefe-area-analisis-metricas-distribucion-table td:nth-child(3),
+.vista-jefe-area-analisis-metricas-distribucion-table td:nth-child(4),
+.vista-jefe-area-analisis-metricas-distribucion-table td:nth-child(5) {
+  text-align: center;
+}
+
+.vista-jefe-area-analisis-metricas-distribucion-table tbody tr {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.vista-jefe-area-analisis-metricas-distribucion-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.vista-jefe-area-analisis-metricas-actividad-name {
+  font-weight: 600;
+  color: #1f2937;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.2s ease;
+}
+
+.vista-jefe-area-analisis-metricas-distribucion-table
+  tbody
+  tr:hover
+  .vista-jefe-area-analisis-metricas-actividad-name {
+  color: #6366f1;
+}
+
+.vista-jefe-area-analisis-metricas-actividad-count {
+  font-weight: 600;
+  color: #1f2937;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.2s ease;
+}
+
+.vista-jefe-area-analisis-metricas-distribucion-table
+  tbody
+  tr:hover
+  .vista-jefe-area-analisis-metricas-actividad-count {
+  color: #6366f1;
+}
+
+.vista-jefe-area-analisis-metricas-progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.vista-jefe-area-analisis-metricas-progress-bar {
+  width: 85%;
+  height: 12px;
+  background-color: #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.vista-jefe-area-analisis-metricas-distribucion-table
+  tbody
+  tr:hover
+  .vista-jefe-area-analisis-metricas-progress-bar {
+  transform: scale(1.02);
+}
+
+.vista-jefe-area-analisis-metricas-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #4f46e5);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.vista-jefe-area-analisis-metricas-progress-fill::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.vista-jefe-area-analisis-metricas-distribucion-table
+  tbody
+  tr:hover
+  .vista-jefe-area-analisis-metricas-progress-fill::before {
+  left: 100%;
+}
+
+.vista-jefe-area-analisis-metricas-progress-percentage {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f2937;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.2s ease;
+}
+
+.vista-jefe-area-analisis-metricas-distribucion-table
+  tbody
+  tr:hover
+  .vista-jefe-area-analisis-metricas-progress-percentage {
+  color: #6366f1;
+  font-weight: 700;
+}
+
+/* FISCALIZADORES RENDIMIENTO CON EFECTOS OPTIMIZADOS */
+.vista-jefe-area-analisis-metricas-fiscalizadores-rendimiento {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.vista-jefe-area-analisis-metricas-fiscalizador-rendimiento-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: linear-gradient(145deg, #f8fafc, #ffffff);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(99, 102, 241, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.vista-jefe-area-analisis-metricas-fiscalizador-rendimiento-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(99, 102, 241, 0.03),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vista-jefe-area-analisis-metricas-fiscalizador-rendimiento-item:hover {
+  background: linear-gradient(145deg, #f0f8ff, #ffffff);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: rgba(99, 102, 241, 0.1);
+}
+
+.vista-jefe-area-analisis-metricas-fiscalizador-rendimiento-item:hover::before {
+  opacity: 1;
+}
+
+.vista-jefe-area-analisis-metricas-fiscalizador-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 12px;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 1;
+}
+
+.vista-jefe-area-analisis-metricas-fiscalizador-rendimiento-item:hover
+  .vista-jefe-area-analisis-metricas-fiscalizador-avatar {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.vista-jefe-area-analisis-metricas-fiscalizador-avatar.jp {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+.vista-jefe-area-analisis-metricas-fiscalizador-avatar.cd {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.vista-jefe-area-analisis-metricas-fiscalizador-avatar.mg {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.vista-jefe-area-analisis-metricas-fiscalizador-avatar.cm {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.vista-jefe-area-analisis-metricas-fiscalizador-avatar.at {
+  background: linear-gradient(135deg, #06b6d4, #0891b2);
+}
+
+.vista-jefe-area-analisis-metricas-fiscalizador-avatar.lm {
+  background: linear-gradient(135deg, #eab308, #ca8a04);
+  color: #1f2937;
+}
+
+.vista-jefe-area-analisis-metricas-fiscalizador-info {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.vista-jefe-area-analisis-metricas-fiscalizador-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1px;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.2s ease;
+}
+
+.vista-jefe-area-analisis-metricas-fiscalizador-rendimiento-item:hover
+  .vista-jefe-area-analisis-metricas-fiscalizador-name {
+  color: #6366f1;
+}
+
+.vista-jefe-area-analisis-metricas-fiscalizador-activity {
+  font-size: 10px;
+  color: #6b7280;
+  font-family: "Nunito", sans-serif;
+}
+
+.vista-jefe-area-analisis-metricas-fiscalizador-stats {
+  text-align: right;
+  position: relative;
+  z-index: 1;
+}
+
+.vista-jefe-area-analisis-metricas-fiscalizador-count {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1f2937;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.2s ease;
+  margin-bottom: 1px;
+}
+
+.vista-jefe-area-analisis-metricas-fiscalizador-rendimiento-item:hover
+  .vista-jefe-area-analisis-metricas-fiscalizador-count {
+  color: #6366f1;
+}
+
+.vista-jefe-area-analisis-metricas-fiscalizador-efficiency {
+  font-size: 9px;
+  color: #10b981;
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.2s ease;
+}
+
+.vista-jefe-area-analisis-metricas-fiscalizador-rendimiento-item:hover
+  .vista-jefe-area-analisis-metricas-fiscalizador-efficiency {
+  color: #059669;
+}
+
+/* RESPONSIVE DESIGN PROFESIONAL */
+@media (max-width: 1400px) {
+  .vista-jefe-area-analisis-metricas {
+    padding: 18px;
+  }
+
+  .vista-jefe-area-analisis-metricas-main-container {
+    padding: 24px;
+  }
+
+  .vista-jefe-area-analisis-metricas-main-content {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .vista-jefe-area-analisis-metricas {
+    padding: 16px;
+  }
+
+  .vista-jefe-area-analisis-metricas-main-container {
+    padding: 20px;
+  }
+
+  .vista-jefe-area-analisis-metricas-stats-cards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .vista-jefe-area-analisis-metricas-stat-card {
+    min-width: 240px;
+    max-width: 280px;
+  }
+
+  .vista-jefe-area-analisis-metricas-main-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .vista-jefe-area-analisis-metricas-distribucion-section,
+  .vista-jefe-area-analisis-metricas-rendimiento-section {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .vista-jefe-area-analisis-metricas-stats-cards {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .vista-jefe-area-analisis-metricas-stat-card {
+    min-width: 220px;
+    max-width: 260px;
+  }
+
+  .vista-jefe-area-analisis-metricas-distribucion-table th,
+  .vista-jefe-area-analisis-metricas-distribucion-table td {
+    padding: 14px 10px;
+    font-size: 12px;
+  }
+
+  .vista-jefe-area-analisis-metricas-distribucion-table th {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 900px) {
+  .vista-jefe-area-analisis-metricas {
+    padding: 14px;
+  }
+
+  .vista-jefe-area-analisis-metricas-main-container {
+    padding: 18px;
+  }
+
+  .vista-jefe-area-analisis-metricas-stats-cards {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .vista-jefe-area-analisis-metricas-stat-card {
+    min-width: 200px;
+    max-width: 240px;
+  }
+
+  .vista-jefe-area-analisis-metricas-stat-card {
+    padding: 20px;
+    min-height: 120px;
+  }
+
+  .vista-jefe-area-analisis-metricas-distribucion-table {
+    font-size: 11px;
+  }
+
+  .vista-jefe-area-analisis-metricas-distribucion-table th,
+  .vista-jefe-area-analisis-metricas-distribucion-table td {
+    padding: 12px 8px;
+    font-size: 11px;
+  }
+
+  .vista-jefe-area-analisis-metricas-distribucion-table th {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vista-jefe-area-analisis-metricas {
+    padding: 12px;
+  }
+
+  .vista-jefe-area-analisis-metricas-main-container {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .vista-jefe-area-analisis-metricas-header-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .vista-jefe-area-analisis-metricas-period-selector,
+  .vista-jefe-area-analisis-metricas-btn-exportar {
+    width: 100%;
+    text-align: center;
+  }
+
+  .vista-jefe-area-analisis-metricas-stats-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .vista-jefe-area-analisis-metricas-stat-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: auto;
+  }
+
+  .vista-jefe-area-analisis-metricas-stat-card {
+    padding: 18px;
+    min-height: 110px;
+  }
+
+  .vista-jefe-area-analisis-metricas-stat-card p {
+    font-size: 28px;
+  }
+
+  .vista-jefe-area-analisis-metricas-stat-card-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .vista-jefe-area-analisis-metricas-distribucion-section,
+  .vista-jefe-area-analisis-metricas-rendimiento-section {
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .vista-jefe-area-analisis-metricas-section-header h3 {
+    font-size: 18px;
+  }
+
+  .vista-jefe-area-analisis-metricas-distribucion-table {
+    font-size: 10px;
+  }
+
+  .vista-jefe-area-analisis-metricas-distribucion-table th,
+  .vista-jefe-area-analisis-metricas-distribucion-table td {
+    padding: 10px 6px;
+    font-size: 10px;
+  }
+
+  .vista-jefe-area-analisis-metricas-distribucion-table th {
+    font-size: 9px;
+  }
+
+  .vista-jefe-area-analisis-metricas-fiscalizador-avatar {
+    width: 42px;
+    height: 42px;
+    font-size: 14px;
+  }
+
+  .vista-jefe-area-analisis-metricas-fiscalizador-name {
+    font-size: 14px;
+  }
+
+  .vista-jefe-area-analisis-metricas-fiscalizador-count {
+    font-size: 16px;
+  }
+
+  /* Efectos reducidos para móvil */
+  .vista-jefe-area-analisis-metricas-stat-card:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+
+  .vista-jefe-area-analisis-metricas-distribucion-section:hover,
+  .vista-jefe-area-analisis-metricas-rendimiento-section:hover {
+    transform: translateY(-2px);
+  }
+
+  .vista-jefe-area-analisis-metricas-fiscalizador-rendimiento-item:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 640px) {
+  .vista-jefe-area-analisis-metricas {
+    padding: 10px;
+  }
+
+  .vista-jefe-area-analisis-metricas-main-container {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .vista-jefe-area-analisis-metricas-stat-card {
+    padding: 16px;
+    min-height: 100px;
+  }
+
+  .vista-jefe-area-analisis-metricas-stat-card p {
+    font-size: 24px;
+  }
+
+  .vista-jefe-area-analisis-metricas-stat-card h3 {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .vista-jefe-area-analisis-metricas-stat-card-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .vista-jefe-area-analisis-metricas-distribucion-section,
+  .vista-jefe-area-analisis-metricas-rendimiento-section {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .vista-jefe-area-analisis-metricas-section-header {
+    margin-bottom: 20px;
+  }
+
+  .vista-jefe-area-analisis-metricas-section-header h3 {
+    font-size: 16px;
+  }
+
+  .vista-jefe-area-analisis-metricas-distribucion-table {
+    font-size: 9px;
+  }
+
+  .vista-jefe-area-analisis-metricas-distribucion-table th,
+  .vista-jefe-area-analisis-metricas-distribucion-table td {
+    padding: 8px 4px;
+    font-size: 9px;
+  }
+
+  .vista-jefe-area-analisis-metricas-distribucion-table th {
+    font-size: 8px;
+    padding: 12px 4px;
+  }
+
+  .vista-jefe-area-analisis-metricas-progress-bar {
+    height: 10px;
+    width: 80%;
+  }
+
+  .vista-jefe-area-analisis-metricas-fiscalizador-rendimiento-item {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .vista-jefe-area-analisis-metricas-fiscalizador-avatar {
+    width: 38px;
+    height: 38px;
+    font-size: 13px;
+  }
+
+  .vista-jefe-area-analisis-metricas-fiscalizador-name {
+    font-size: 13px;
+  }
+
+  .vista-jefe-area-analisis-metricas-fiscalizador-activity {
+    font-size: 11px;
+  }
+
+  .vista-jefe-area-analisis-metricas-fiscalizador-count {
+    font-size: 15px;
+  }
+
+  .vista-jefe-area-analisis-metricas-fiscalizador-efficiency {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vista-jefe-area-analisis-metricas {
+    padding: 8px;
+  }
+
+  .vista-jefe-area-analisis-metricas-main-container {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .vista-jefe-area-analisis-metricas-stat-card {
+    padding: 14px;
+    min-height: 90px;
+  }
+
+  .vista-jefe-area-analisis-metricas-stat-card p {
+    font-size: 22px;
+  }
+
+  .vista-jefe-area-analisis-metricas-stat-card h3 {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .vista-jefe-area-analisis-metricas-stat-card-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .vista-jefe-area-analisis-metricas-sub-text {
+    font-size: 11px;
+  }
+
+  .vista-jefe-area-analisis-metricas-distribucion-section,
+  .vista-jefe-area-analisis-metricas-rendimiento-section {
+    padding: 14px;
+    border-radius: 10px;
+  }
+
+  .vista-jefe-area-analisis-metricas-section-header {
+    margin-bottom: 16px;
+  }
+
+  .vista-jefe-area-analisis-metricas-section-header h3 {
+    font-size: 15px;
+  }
+
+  .vista-jefe-area-analisis-metricas-distribucion-table {
+    font-size: 8px;
+  }
+
+  .vista-jefe-area-analisis-metricas-distribucion-table th,
+  .vista-jefe-area-analisis-metricas-distribucion-table td {
+    padding: 6px 3px;
+    font-size: 8px;
+  }
+
+  .vista-jefe-area-analisis-metricas-distribucion-table th {
+    font-size: 7px;
+    padding: 10px 3px;
+  }
+
+  .vista-jefe-area-analisis-metricas-progress-bar {
+    height: 8px;
+    width: 75%;
+  }
+
+  .vista-jefe-area-analisis-metricas-progress-percentage {
+    font-size: 11px;
+  }
+
+  .vista-jefe-area-analisis-metricas-fiscalizador-rendimiento-item {
+    padding: 12px 14px;
+    gap: 10px;
+    border-radius: 10px;
+  }
+
+  .vista-jefe-area-analisis-metricas-fiscalizador-avatar {
+    width: 34px;
+    height: 34px;
+    font-size: 12px;
+  }
+
+  .vista-jefe-area-analisis-metricas-fiscalizador-name {
+    font-size: 12px;
+  }
+
+  .vista-jefe-area-analisis-metricas-fiscalizador-activity {
+    font-size: 10px;
+  }
+
+  .vista-jefe-area-analisis-metricas-fiscalizador-count {
+    font-size: 14px;
+  }
+
+  .vista-jefe-area-analisis-metricas-fiscalizador-efficiency {
+    font-size: 9px;
+  }
+
+  /* Efectos mínimos en móviles muy pequeños */
+  .vista-jefe-area-analisis-metricas-stat-card:hover {
+    transform: translateY(-2px) scale(1.005);
+  }
+
+  .vista-jefe-area-analisis-metricas-distribucion-section:hover,
+  .vista-jefe-area-analisis-metricas-rendimiento-section:hover {
+    transform: translateY(-1px);
+  }
+
+  .vista-jefe-area-analisis-metricas-fiscalizador-rendimiento-item:hover {
+    transform: translateY(-1px);
+  }
+
+  .vista-jefe-area-analisis-metricas-fiscalizador-avatar:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* MEJORAS ADICIONALES PARA PERFORMANCE */
+@media (prefers-reduced-motion: reduce) {
+  .vista-jefe-area-analisis-metricas *,
+  .vista-jefe-area-analisis-metricas *::before,
+  .vista-jefe-area-analisis-metricas *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* OPTIMIZACIÓN PARA IMPRESIÓN */
+@media print {
+  .vista-jefe-area-analisis-metricas {
+    background-color: white;
+    padding: 10px;
+  }
+
+  .vista-jefe-area-analisis-metricas-main-container {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    background: white;
+  }
+
+  .vista-jefe-area-analisis-metricas-btn-exportar {
+    display: none;
+  }
+
+  .vista-jefe-area-analisis-metricas-stat-card,
+  .vista-jefe-area-analisis-metricas-distribucion-section,
+  .vista-jefe-area-analisis-metricas-rendimiento-section {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    background: white;
+  }
+}

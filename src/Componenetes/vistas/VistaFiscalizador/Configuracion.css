@@ -1,65 +1,810 @@
-.configuracion {
-  padding: 20px;
+/* ESTILOS CONFIGURACIÓN FISCALIZADOR - TAMAÑOS ORIGINALES + COLORES 3D MEJORADOS */
+.fiscalizador-configuracion-main-container {
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Nunito", sans-serif;
 }
 
-h2 {
-  font-size: 24px;
+.fiscalizador-configuracion {
+  font-family: "Nunito", sans-serif;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.fiscalizador-configuracion-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #f0f2f5;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  margin: 20px;
+  padding: 30px;
+  overflow: hidden;
+}
+
+.fiscalizador-configuracion-cards-wrapper {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: nowrap;
+  max-width: 100%;
+  height: auto;
+  padding: 0;
+}
+
+.fiscalizador-configuracion-left-cards,
+.fiscalizador-configuracion-right-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: calc(50% - 7.5px);
+  min-width: 0;
+  align-items: stretch;
+}
+
+/* CARDS CON EFECTOS 3D MEJORADOS - TAMAÑOS ORIGINALES */
+.fiscalizador-configuracion-card {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08), 0 3px 10px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.fiscalizador-configuracion-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(99, 102, 241, 0.08),
+    transparent
+  );
+  transition: left 0.6s ease;
+  z-index: 0;
+}
+
+.fiscalizador-configuracion-card:hover {
+  background: linear-gradient(145deg, #f8fafc, #ffffff);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12), 0 8px 25px rgba(0, 0, 0, 0.08);
+  border-color: rgba(99, 102, 241, 0.2);
+}
+
+.fiscalizador-configuracion-card:hover::before {
+  left: 100%;
+}
+
+/* ALTURAS Y PADDING ORIGINALES */
+.fiscalizador-configuracion-card1 {
+  padding: 24px;
+  min-height: 340px;
+  position: relative;
+  z-index: 2;
+}
+
+.fiscalizador-configuracion-card2 {
+  padding: 24px;
+  min-height: 280px;
+  position: relative;
+  z-index: 2;
+}
+
+.fiscalizador-configuracion-card3 {
+  padding: 28px;
+  min-height: 240px;
+  position: relative;
+  z-index: 2;
+}
+
+.fiscalizador-configuracion-card4 {
+  padding: 24px;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  max-height: none;
+  position: relative;
+  z-index: 2;
+}
+
+/* HEADER DE CARDS CON EFECTOS 3D MEJORADOS */
+.fiscalizador-configuracion-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+}
+
+.fiscalizador-configuracion-card-icon {
+  width: 36px;
+  height: 36px;
+  margin-right: 12px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.1));
+}
+
+.fiscalizador-configuracion-card:hover .fiscalizador-configuracion-card-icon {
+  transform: scale(1.1) rotate(5deg);
+  filter: drop-shadow(0 6px 15px rgba(0, 0, 0, 0.2));
+}
+
+.fiscalizador-configuracion-card-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.fiscalizador-configuracion-card-title h3 {
+  font-size: 16px;
+  margin: 0;
   font-family: "Nunito", sans-serif;
   font-weight: 700;
-  margin-bottom: 10px;
+  color: #1f2937;
+  transition: all 0.3s ease;
 }
 
-p {
-  color: #6c757d;
-  margin-bottom: 20px;
+.fiscalizador-configuracion-card:hover
+  .fiscalizador-configuracion-card-title
+  h3 {
+  color: #6366f1;
+  text-shadow: 0 2px 8px rgba(99, 102, 241, 0.2);
 }
 
-.sections {
-  display: flex;
-  gap: 20px;
+.fiscalizador-configuracion-card-title p {
+  color: #6b7280;
+  margin: 2px 0 0 0;
+  font-size: 11px;
+  font-family: "Nunito", sans-serif;
+  white-space: nowrap;
+  transition: color 0.3s ease;
 }
 
-.section {
-  background: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 30%;
+.fiscalizador-configuracion-card:hover
+  .fiscalizador-configuracion-card-title
+  p {
+  color: #8b5cf6;
 }
 
-.section h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.section p {
-  margin-bottom: 15px;
-}
-
-.section input {
+/* INPUTS Y LABELS CON COLORES MEJORADOS */
+.fiscalizador-configuracion-card label {
   display: block;
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
+  margin-bottom: 6px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  color: #374151;
+  font-size: 13px;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 3;
 }
 
-.section button {
-  padding: 8px 15px;
-  background-color: #007bff;
+.fiscalizador-configuracion-card:hover label {
+  color: #4f46e5;
+}
+
+.fiscalizador-configuracion-card input {
+  display: block;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-family: "Nunito", sans-serif;
+  background: linear-gradient(145deg, #f9fafb, #ffffff);
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 13px;
+  color: #374151;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
+  position: relative;
+  z-index: 3;
+}
+
+.fiscalizador-configuracion-card input:focus {
+  outline: none;
+  border-color: #6366f1;
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1),
+    0 4px 15px rgba(99, 102, 241, 0.15);
+}
+
+.fiscalizador-configuracion-card input:hover {
+  border-color: #a5b4fc;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(99, 102, 241, 0.1);
+}
+
+/* BOTÓN ACTUALIZAR CON COLORES MEJORADOS */
+.fiscalizador-configuracion-update-button {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
+  width: 100%;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: auto;
+  margin-bottom: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+  align-self: flex-end;
 }
 
-.section div {
-  padding: 5px 0;
-  color: #6c757d;
+.fiscalizador-configuracion-update-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
 }
 
-.section div span {
-  float: right;
-  color: #28a745;
+.fiscalizador-configuracion-update-button:hover {
+  background: linear-gradient(135deg, #4f46e5, #3730a3);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+.fiscalizador-configuracion-update-button:hover::before {
+  left: 100%;
+}
+
+.fiscalizador-configuracion-update-button:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
+/* PREFERENCIAS SWITCHES CON COLORES MEJORADOS */
+.fiscalizador-configuracion-preference-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 16px;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 3;
+  background: rgba(99, 102, 241, 0.02);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+.fiscalizador-configuracion-preference-item:hover {
+  background: rgba(99, 102, 241, 0.05);
+  transform: translateX(5px) scale(1.01);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.2);
+}
+
+.fiscalizador-configuracion-preference-text {
+  flex: 1;
+}
+
+.fiscalizador-configuracion-preference-text strong {
+  display: block;
+  margin-bottom: 4px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #1f2937;
+  transition: color 0.3s ease;
+}
+
+.fiscalizador-configuracion-preference-item:hover
+  .fiscalizador-configuracion-preference-text
+  strong {
+  color: #6366f1;
+}
+
+.fiscalizador-configuracion-preference-text p {
+  margin: 0;
+  color: #6b7280;
+  font-family: "Nunito", sans-serif;
+  font-size: 12px;
+  transition: color 0.3s ease;
+}
+
+.fiscalizador-configuracion-preference-item:hover
+  .fiscalizador-configuracion-preference-text
+  p {
+  color: #8b5cf6;
+}
+
+.fiscalizador-configuracion-switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 26px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fiscalizador-configuracion-switch:hover {
+  transform: scale(1.05);
+}
+
+.fiscalizador-configuracion-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.fiscalizador-configuracion-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(145deg, #d1d5db, #e5e7eb);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 26px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.fiscalizador-configuracion-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+input:checked + .fiscalizador-configuracion-slider {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1),
+    0 0 15px rgba(99, 102, 241, 0.3);
+}
+
+input:checked + .fiscalizador-configuracion-slider:before {
+  transform: translateX(22px);
+  background: linear-gradient(145deg, #ffffff, #f1f5f9);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+}
+
+.fiscalizador-configuracion-switch:hover .fiscalizador-configuracion-slider {
+  transform: scale(1.05);
+}
+
+/* TIPOS DE ACTIVIDADES CON COLORES MEJORADOS */
+.fiscalizador-configuracion-activity-items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  z-index: 3;
+  margin-top: 8px;
+}
+
+.fiscalizador-configuracion-activity-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(145deg, #f8fafc, #ffffff);
+  padding: 18px 20px;
+  border-radius: 12px;
+  border: 2px solid #e5e7eb;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.fiscalizador-configuracion-activity-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(99, 102, 241, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.fiscalizador-configuracion-activity-item:hover {
+  background: linear-gradient(145deg, #f0f8ff, #ffffff);
+  transform: translateY(-2px) translateX(4px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.15);
+  border-color: #6366f1;
+}
+
+.fiscalizador-configuracion-activity-item:hover::before {
+  left: 100%;
+}
+
+.fiscalizador-configuracion-activity-item span {
+  font-family: "Nunito", sans-serif;
+  font-size: 13px;
+  color: #374151;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.fiscalizador-configuracion-activity-item:hover span {
+  color: #1d4ed8;
+}
+
+.fiscalizador-configuracion-enabled-button {
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+  color: #047857;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 14px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 3px 8px rgba(16, 185, 129, 0.25);
+}
+
+.fiscalizador-configuracion-activity-item:hover
+  .fiscalizador-configuracion-enabled-button {
+  background: linear-gradient(135deg, #a7f3d0, #6ee7b7);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* ===== CARD DE SEGURIDAD CON COLORES MEJORADOS ===== */
+.fiscalizador-configuracion-security-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  min-height: 350px;
+  position: relative;
+  z-index: 3;
+}
+
+.fiscalizador-configuracion-password-fields-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.fiscalizador-configuracion-password-field {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 8px);
+}
+
+.fiscalizador-configuracion-password-field-empty {
+  width: calc(50% - 8px);
+}
+
+.fiscalizador-configuracion-password-field label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: #374151;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.fiscalizador-configuracion-card4:hover
+  .fiscalizador-configuracion-password-field
+  label {
+  color: #dc2626;
+}
+
+.fiscalizador-configuracion-password-field input {
+  padding: 10px 12px !important;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #f9fafb, #ffffff);
+  font-size: 13px;
+  margin-bottom: 10px !important;
+  font-family: "Nunito", sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.fiscalizador-configuracion-password-field input:focus {
+  outline: none;
+  border-color: #dc2626;
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.1),
+    0 4px 15px rgba(220, 38, 38, 0.15);
+}
+
+.fiscalizador-configuracion-password-field input:hover {
+  border-color: #fca5a5;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(220, 38, 38, 0.1);
+}
+
+/* Caja de requisitos CON COLORES MEJORADOS */
+.fiscalizador-configuracion-requirements-box {
+  background: linear-gradient(145deg, #eff6ff, #dbeafe);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-top: 8px;
+  margin-bottom: 10px;
+  border: 2px solid #bfdbfe;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+}
+
+.fiscalizador-configuracion-card4:hover
+  .fiscalizador-configuracion-requirements-box {
+  background: linear-gradient(145deg, #dbeafe, #bfdbfe);
+  border-color: #93c5fd;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.15);
+}
+
+.fiscalizador-configuracion-requirements-title {
+  color: #1e40af;
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 11px;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.fiscalizador-configuracion-card4:hover
+  .fiscalizador-configuracion-requirements-title {
+  color: #1d4ed8;
+}
+
+.fiscalizador-configuracion-requirements-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fiscalizador-configuracion-requirements-list li {
+  position: relative;
+  padding-left: 14px;
+  margin-bottom: 3px;
+  color: #3730a3;
+  font-size: 10px;
+  font-family: "Nunito", sans-serif;
+  line-height: 1.4;
+  transition: all 0.3s ease;
+}
+
+.fiscalizador-configuracion-card4:hover
+  .fiscalizador-configuracion-requirements-list
+  li {
+  color: #1e1b4b;
+  transform: translateX(3px);
+}
+
+.fiscalizador-configuracion-requirements-list li::before {
+  content: "●";
+  position: absolute;
+  left: 0;
+  color: #dc2626;
+  font-weight: bold;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.fiscalizador-configuracion-card4:hover
+  .fiscalizador-configuracion-requirements-list
+  li::before {
+  transform: scale(1.2);
+}
+
+/* Botón cambiar contraseña CON COLORES MEJORADOS */
+.fiscalizador-configuracion-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: 4px;
+  padding-top: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.fiscalizador-configuracion-change-password-button {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: white;
+  border: none;
+  border-radius: 22px;
+  padding: 16px 36px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  min-width: 220px;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.fiscalizador-configuracion-change-password-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.fiscalizador-configuracion-change-password-button:hover {
+  background: linear-gradient(135deg, #b91c1c, #991b1b);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+}
+
+.fiscalizador-configuracion-change-password-button:hover::before {
+  left: 100%;
+}
+
+.fiscalizador-configuracion-change-password-button:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
+/* Responsive ORIGINAL */
+@media (max-width: 1200px) {
+  .fiscalizador-configuracion-content {
+    margin: 15px;
+    padding: 25px;
+  }
+
+  .fiscalizador-configuracion-cards-wrapper {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 900px) {
+  .fiscalizador-configuracion-cards-wrapper {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .fiscalizador-configuracion-left-cards,
+  .fiscalizador-configuracion-right-cards {
+    width: 100%;
+  }
+
+  .fiscalizador-configuracion-content {
+    margin: 10px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .fiscalizador-configuracion-content {
+    margin: 8px;
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .fiscalizador-configuracion-password-fields-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .fiscalizador-configuracion-password-field {
+    width: 100%;
+  }
+
+  .fiscalizador-configuracion-password-field-empty {
+    display: none;
+  }
+
+  /* Reducir efectos en móvil para mejor performance */
+  .fiscalizador-configuracion-card:hover {
+    transform: translateY(-3px) scale(1.01);
+  }
+
+  .fiscalizador-configuracion-activity-item:hover {
+    transform: translateY(-2px) translateX(3px) scale(1.01);
+  }
+
+  .fiscalizador-configuracion-change-password-button:hover {
+    transform: translateY(-2px) scale(1.01);
+  }
+
+  .fiscalizador-configuracion-switch:hover {
+    transform: scale(1.03);
+  }
+}
+
+@media (max-width: 480px) {
+  .fiscalizador-configuracion-main-container {
+    padding: 0 5px;
+  }
+
+  .fiscalizador-configuracion-content {
+    margin: 5px;
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .fiscalizador-configuracion-card1,
+  .fiscalizador-configuracion-card2,
+  .fiscalizador-configuracion-card3,
+  .fiscalizador-configuracion-card4 {
+    padding: 20px;
+  }
+
+  .fiscalizador-configuracion-card-title h3 {
+    font-size: 15px;
+  }
+
+  .fiscalizador-configuracion-card-title p {
+    font-size: 10px;
+  }
+
+  .fiscalizador-configuracion-change-password-button {
+    min-width: 180px;
+    padding: 14px 28px;
+    font-size: 12px;
+  }
+
+  /* Efectos más sutiles en móviles pequeños */
+  .fiscalizador-configuracion-card:hover {
+    transform: translateY(-2px) scale(1.005);
+  }
+
+  .fiscalizador-configuracion-activity-item:hover {
+    transform: translateY(-1px) scale(1.005);
+  }
+
+  .fiscalizador-configuracion-update-button:hover,
+  .fiscalizador-configuracion-change-password-button:hover {
+    transform: translateY(-2px) scale(1.01);
+  }
+
+  .fiscalizador-configuracion-switch:hover {
+    transform: scale(1.02);
+  }
 }

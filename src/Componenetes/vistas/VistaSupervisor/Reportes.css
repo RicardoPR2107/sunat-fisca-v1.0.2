@@ -1,0 +1,1027 @@
+/* ESTILOS REPORTES SUPERVISOR - RESPONSIVE PERFECTO */
+.supervisor-reportes-main-container {
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.supervisor-reportes {
+  font-family: "Nunito", sans-serif;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.supervisor-reportes-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #f0f2f5;
+  padding: 0;
+  margin: 20px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Stats Cards CON EFECTOS 3D ESPECTACULARES - RESPONSIVE OPTIMIZADO */
+.supervisor-reportes-stats-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding: 25px;
+  max-width: 100%;
+  overflow: hidden;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.supervisor-reportes-stat-card {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  border-radius: 12px;
+  padding: 18px 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  min-width: 200px;
+  max-width: 320px;
+}
+
+.supervisor-reportes-stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.supervisor-reportes-stat-card:hover {
+  background: linear-gradient(145deg, #f8fafc, #ffffff);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15), 0 6px 20px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.supervisor-reportes-stat-card:hover::before {
+  left: 100%;
+}
+
+/* Efectos específicos por tipo de card */
+.supervisor-reportes-stat-total::before {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(59, 130, 246, 0.1),
+    transparent
+  );
+}
+
+.supervisor-reportes-stat-completed::before {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(16, 185, 129, 0.1),
+    transparent
+  );
+}
+
+.supervisor-reportes-stat-pending::before {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(239, 68, 68, 0.1),
+    transparent
+  );
+}
+
+.supervisor-reportes-stat-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.supervisor-reportes-stat-text {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.supervisor-reportes-stat-label {
+  font-size: 12px;
+  color: #8b949e;
+  font-weight: 500;
+  text-transform: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 0 6px 0;
+  line-height: 1.2;
+  text-align: left;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.supervisor-reportes-stat-total:hover .supervisor-reportes-stat-label {
+  color: #3b82f6;
+}
+
+.supervisor-reportes-stat-completed:hover .supervisor-reportes-stat-label {
+  color: #10b981;
+}
+
+.supervisor-reportes-stat-pending:hover .supervisor-reportes-stat-label {
+  color: #ef4444;
+}
+
+.supervisor-reportes-stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1f2328;
+  margin: 0 0 4px 0;
+  line-height: 1;
+  text-align: left;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.supervisor-reportes-stat-total:hover .supervisor-reportes-stat-value {
+  color: #1d4ed8;
+  text-shadow: 0 2px 4px rgba(29, 78, 216, 0.1);
+}
+
+.supervisor-reportes-stat-completed:hover .supervisor-reportes-stat-value {
+  color: #047857;
+  text-shadow: 0 2px 4px rgba(4, 120, 87, 0.1);
+}
+
+.supervisor-reportes-stat-pending:hover .supervisor-reportes-stat-value {
+  color: #dc2626;
+  text-shadow: 0 2px 4px rgba(220, 38, 38, 0.1);
+}
+
+.supervisor-reportes-stat-description {
+  font-size: 12px;
+  color: #43be83;
+  font-weight: 500;
+  margin: 0;
+  text-align: left;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.supervisor-reportes-stat-total:hover .supervisor-reportes-stat-description {
+  color: #3b82f6;
+}
+
+.supervisor-reportes-stat-completed:hover
+  .supervisor-reportes-stat-description {
+  color: #059669;
+}
+
+.supervisor-reportes-stat-pending:hover .supervisor-reportes-stat-description {
+  color: #f87171;
+}
+
+.supervisor-reportes-stat-icon {
+  width: 48px !important;
+  height: 48px !important;
+  object-fit: contain !important;
+  flex-shrink: 0 !important;
+  display: block !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  align-self: center !important;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.supervisor-reportes-stat-icon img {
+  width: 48px !important;
+  height: 48px !important;
+  object-fit: contain !important;
+  display: block !important;
+  transition: all 0.3s ease;
+}
+
+.supervisor-reportes-stat-card:hover .supervisor-reportes-stat-icon {
+  transform: scale(1.1) rotate(5deg);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+/* Filters CON EFECTOS 3D - RESPONSIVE OPTIMIZADO */
+.supervisor-reportes-filters-container {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin: 0 25px 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+
+.supervisor-reportes-filters-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(139, 92, 246, 0.03),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.supervisor-reportes-filters-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.supervisor-reportes-filters-container:hover::before {
+  opacity: 1;
+}
+
+.supervisor-reportes-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+}
+
+.supervisor-reportes-filter-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2328;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.supervisor-reportes-filters-container:hover
+  .supervisor-reportes-filter-group
+  label {
+  color: #8b5cf6;
+}
+
+.supervisor-reportes-filter-select {
+  padding: 8px 30px 8px 12px;
+  border: 1px solid #d1d9e0;
+  border-radius: 6px;
+  background: linear-gradient(145deg, #f6f8fa, #ffffff);
+  font-size: 13px;
+  color: #1f2328;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 140px;
+  font-family: "Nunito", sans-serif;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.supervisor-reportes-filter-select:hover {
+  border-color: #8b5cf6;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.1);
+}
+
+.supervisor-reportes-filter-select:focus {
+  outline: none;
+  border-color: #8b5cf6;
+  background: #ffffff;
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1),
+    0 4px 12px rgba(139, 92, 246, 0.15);
+}
+
+.supervisor-reportes-search-container {
+  flex: 1;
+  margin-left: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.supervisor-reportes-search-input {
+  width: 100%;
+  max-width: 300px;
+  padding: 8px 12px;
+  border: 1px solid #d1d9e0;
+  border-radius: 6px;
+  background: linear-gradient(145deg, #f6f8fa, #ffffff);
+  font-size: 13px;
+  color: #1f2328;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: "Nunito", sans-serif;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.supervisor-reportes-search-input::placeholder {
+  color: #8b949e;
+}
+
+.supervisor-reportes-search-input:focus {
+  outline: none;
+  border-color: #8b5cf6;
+  background: #ffffff;
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1),
+    0 4px 12px rgba(139, 92, 246, 0.15);
+}
+
+.supervisor-reportes-search-input:hover {
+  border-color: #8b5cf6;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.1);
+}
+
+/* Table Container CON EFECTOS 3D */
+.supervisor-reportes-table-container {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  border-radius: 12px;
+  padding: 25px;
+  margin: 0 30px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.supervisor-reportes-table-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(59, 130, 246, 0.02),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.supervisor-reportes-table-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.supervisor-reportes-table-container:hover::before {
+  opacity: 1;
+}
+
+.supervisor-reportes-table-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  color: #1f2328;
+  font-family: "Nunito", sans-serif;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.supervisor-reportes-table-container:hover .supervisor-reportes-table-title {
+  color: #3b82f6;
+}
+
+/* Table Styles - RESPONSIVE OPTIMIZADO */
+.supervisor-reportes-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+  position: relative;
+  z-index: 1;
+}
+
+.supervisor-reportes-table thead th {
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  font-family: "Nunito", sans-serif;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.supervisor-reportes-table thead th:first-child {
+  border-radius: 8px 0 0 0;
+}
+
+.supervisor-reportes-table thead th:last-child {
+  border-radius: 0 8px 0 0;
+}
+
+.supervisor-reportes-table tbody td {
+  padding: 16px;
+  font-size: 14px;
+  color: #374151;
+  border-bottom: 1px solid #f3f4f6;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.15s ease;
+}
+
+.supervisor-reportes-table-row:hover td {
+  background-color: #f8fafc;
+}
+
+/* Status Badge CON EFECTOS 3D */
+.supervisor-reportes-status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.supervisor-reportes-status-badge.completado {
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+  color: #047857;
+}
+
+.supervisor-reportes-status-badge.completado:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.supervisor-reportes-status-badge.pendiente {
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  color: #dc2626;
+}
+
+.supervisor-reportes-status-badge.pendiente:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+/* Action Buttons CON EFECTOS 3D */
+.supervisor-reportes-action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.supervisor-reportes-btn-ver,
+.supervisor-reportes-btn-descargar {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: "Nunito", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.supervisor-reportes-btn-ver::before,
+.supervisor-reportes-btn-descargar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.4s ease;
+}
+
+.supervisor-reportes-btn-ver {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  color: #1d4ed8;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+}
+
+.supervisor-reportes-btn-ver:hover {
+  background: linear-gradient(135deg, #bfdbfe, #93c5fd);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.supervisor-reportes-btn-ver:hover::before {
+  left: 100%;
+}
+
+.supervisor-reportes-btn-descargar {
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+  color: #047857;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.2);
+}
+
+.supervisor-reportes-btn-descargar:hover::before {
+  left: 100%;
+}
+
+/* Pagination CON EFECTOS 3D */
+.supervisor-reportes-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+  flex-wrap: wrap;
+  gap: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.supervisor-reportes-pagination-info {
+  font-size: 14px;
+  color: #6b7280;
+  font-family: "Nunito", sans-serif;
+}
+
+.supervisor-reportes-pagination-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.supervisor-reportes-pagination-btn {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  color: #374151;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 40px;
+  font-family: "Nunito", sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.supervisor-reportes-pagination-btn:hover {
+  background: linear-gradient(145deg, #f0f8ff, #ffffff);
+  border-color: #6366f1;
+  color: #6366f1;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.supervisor-reportes-pagination-btn.active {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  border-color: #6366f1;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.supervisor-reportes-pagination-btn.active:hover {
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+.supervisor-reportes-pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* RESPONSIVE PERFECTO Y PROFESIONAL */
+@media (max-width: 1400px) {
+  .supervisor-reportes-content {
+    max-width: 95%;
+    margin: 20px auto;
+  }
+
+  .supervisor-reportes-table-container {
+    margin: 0 20px 20px;
+  }
+
+  .supervisor-reportes-filters-container {
+    margin: 0 20px 18px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .supervisor-reportes-content {
+    margin: 15px;
+  }
+
+  .supervisor-reportes-stats-container {
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .supervisor-reportes-stat-card {
+    max-width: none;
+    min-width: auto;
+    flex: none;
+  }
+
+  .supervisor-reportes-filters-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    padding: 18px;
+    margin: 0 15px 18px;
+  }
+
+  .supervisor-reportes-filter-group {
+    justify-content: space-between;
+  }
+
+  .supervisor-reportes-search-container {
+    max-width: none;
+    margin-left: 0;
+  }
+
+  .supervisor-reportes-search-input {
+    max-width: none;
+  }
+
+  .supervisor-reportes-table-container {
+    margin: 0 15px 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .supervisor-reportes-stats-container {
+    gap: 15px;
+    padding: 18px;
+  }
+
+  .supervisor-reportes-stat-card {
+    padding: 16px 14px;
+  }
+
+  .supervisor-reportes-filter-select {
+    width: 100%;
+  }
+
+  .supervisor-reportes-table {
+    min-width: 650px;
+  }
+
+  .supervisor-reportes-table thead th,
+  .supervisor-reportes-table tbody td {
+    padding: 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 900px) {
+  .supervisor-reportes-content {
+    margin: 10px;
+  }
+
+  .supervisor-reportes-stats-container {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .supervisor-reportes-stat-card {
+    padding: 14px 12px;
+  }
+
+  .supervisor-reportes-stat-value {
+    font-size: 28px;
+  }
+
+  .supervisor-reportes-stat-icon {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .supervisor-reportes-stat-icon img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .supervisor-reportes-filters-container {
+    padding: 16px;
+    margin: 0 10px 15px;
+  }
+
+  .supervisor-reportes-filter-group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .supervisor-reportes-table-container {
+    padding: 20px;
+    margin: 0 10px 15px;
+  }
+
+  .supervisor-reportes-table {
+    min-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .supervisor-reportes-content {
+    margin: 8px;
+  }
+
+  .supervisor-reportes-stats-container {
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .supervisor-reportes-stat-card {
+    padding: 12px 10px;
+  }
+
+  .supervisor-reportes-stat-value {
+    font-size: 24px;
+  }
+
+  .supervisor-reportes-stat-icon {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .supervisor-reportes-stat-icon img {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .supervisor-reportes-filters-container {
+    padding: 14px;
+    margin: 0 8px 12px;
+  }
+
+  .supervisor-reportes-table-container {
+    padding: 18px;
+    margin: 0 8px 12px;
+  }
+
+  .supervisor-reportes-table {
+    min-width: 550px;
+    font-size: 12px;
+  }
+
+  .supervisor-reportes-table thead th,
+  .supervisor-reportes-table tbody td {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .supervisor-reportes-action-buttons {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .supervisor-reportes-btn-ver,
+  .supervisor-reportes-btn-descargar {
+    padding: 5px 10px;
+    font-size: 12px;
+    width: 100%;
+  }
+
+  .supervisor-reportes-pagination {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .supervisor-reportes-pagination-controls {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Reducir efectos en móvil para mejor performance */
+  .supervisor-reportes-stat-card:hover {
+    transform: translateY(-2px) scale(1.01);
+  }
+
+  .supervisor-reportes-btn-ver:hover,
+  .supervisor-reportes-btn-descargar:hover {
+    transform: translateY(-1px) scale(1.02);
+  }
+
+  .supervisor-reportes-status-badge:hover {
+    transform: scale(1.02);
+  }
+}
+
+@media (max-width: 640px) {
+  .supervisor-reportes-content {
+    margin: 6px;
+  }
+
+  .supervisor-reportes-stats-container {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .supervisor-reportes-stat-card {
+    padding: 10px 8px;
+  }
+
+  .supervisor-reportes-stat-value {
+    font-size: 22px;
+  }
+
+  .supervisor-reportes-stat-icon {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .supervisor-reportes-stat-icon img {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .supervisor-reportes-filters-container {
+    padding: 12px;
+    margin: 0 6px 10px;
+  }
+
+  .supervisor-reportes-table-container {
+    padding: 16px;
+    margin: 0 6px 10px;
+  }
+
+  .supervisor-reportes-table {
+    min-width: 500px;
+    font-size: 11px;
+  }
+
+  .supervisor-reportes-table thead th,
+  .supervisor-reportes-table tbody td {
+    padding: 8px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .supervisor-reportes-main-container {
+    padding: 0 5px;
+  }
+
+  .supervisor-reportes-content {
+    margin: 5px;
+  }
+
+  .supervisor-reportes-stats-container {
+    padding: 10px;
+    gap: 6px;
+  }
+
+  .supervisor-reportes-stat-card {
+    padding: 8px 6px;
+  }
+
+  .supervisor-reportes-stat-value {
+    font-size: 20px;
+  }
+
+  .supervisor-reportes-stat-icon {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .supervisor-reportes-stat-icon img {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .supervisor-reportes-filters-container {
+    padding: 10px;
+    margin: 0 5px 8px;
+  }
+
+  .supervisor-reportes-table-container {
+    padding: 14px;
+    margin: 0 5px 8px;
+  }
+
+  .supervisor-reportes-table {
+    min-width: 450px;
+    font-size: 10px;
+  }
+
+  .supervisor-reportes-table thead th,
+  .supervisor-reportes-table tbody td {
+    padding: 6px;
+    font-size: 10px;
+  }
+
+  .supervisor-reportes-btn-ver,
+  .supervisor-reportes-btn-descargar {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+
+  .supervisor-reportes-pagination-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+    min-width: 32px;
+  }
+
+  .supervisor-reportes-pagination-controls {
+    gap: 4px;
+  }
+
+  /* Efectos mínimos en móviles muy pequeños */
+  .supervisor-reportes-stat-card:hover {
+    transform: translateY(-1px) scale(1.005);
+  }
+
+  .supervisor-reportes-btn-ver:hover,
+  .supervisor-reportes-btn-descargar:hover {
+    transform: none;
+  }
+
+  .supervisor-reportes-pagination-btn:hover {
+    transform: translateY(-1px) scale(1.02);
+  }
+}
+
+@media (max-width: 360px) {
+  .supervisor-reportes-stats-container {
+    padding: 8px;
+    gap: 4px;
+  }
+
+  .supervisor-reportes-stat-card {
+    padding: 6px 4px;
+  }
+
+  .supervisor-reportes-stat-value {
+    font-size: 18px;
+  }
+
+  .supervisor-reportes-stat-icon {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  .supervisor-reportes-stat-icon img {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  .supervisor-reportes-filters-container,
+  .supervisor-reportes-table-container {
+    padding: 8px;
+  }
+
+  .supervisor-reportes-table {
+    min-width: 400px;
+    font-size: 9px;
+  }
+
+  .supervisor-reportes-table thead th,
+  .supervisor-reportes-table tbody td {
+    padding: 4px;
+    font-size: 9px;
+  }
+
+  .supervisor-reportes-stat-label,
+  .supervisor-reportes-stat-description {
+    font-size: 10px;
+  }
+}

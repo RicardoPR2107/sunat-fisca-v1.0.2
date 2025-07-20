@@ -1,0 +1,502 @@
+/* ESTILOS DASHBOARD SUPERVISOR - SIN INTERFERENCIA */
+.supervisor-dashboard-main-container {
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.supervisor-dashboard {
+  font-family: "Nunito", sans-serif;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.supervisor-dashboard-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #f0f2f5;
+  padding: 0;
+  margin: 20px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Grid de estadísticas CON EFECTOS 3D PROFESIONALES */
+.supervisor-dashboard-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 30px 30px 20px;
+}
+
+.supervisor-dashboard-stat-card {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  border-radius: 16px;
+  padding: 24px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.supervisor-dashboard-stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(59, 130, 246, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.supervisor-dashboard-stat-card:hover {
+  background: linear-gradient(145deg, #f8fafc, #ffffff);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15), 0 6px 20px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.supervisor-dashboard-stat-card:hover::before {
+  left: 100%;
+}
+
+.supervisor-dashboard-stat-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.supervisor-dashboard-stat-info {
+  flex: 1;
+  min-width: 0;
+  margin-right: 12px;
+}
+
+.supervisor-dashboard-stat-title {
+  font-size: 12px;
+  color: #8b949e;
+  font-weight: 500;
+  margin: 0 0 6px 0;
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1.2;
+  word-wrap: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.supervisor-dashboard-stat-card:hover .supervisor-dashboard-stat-title {
+  color: #3b82f6;
+}
+
+.supervisor-dashboard-stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1f2328;
+  margin: 2px 0;
+  line-height: 0.9;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.supervisor-dashboard-stat-card:hover .supervisor-dashboard-stat-value {
+  color: #1d4ed8;
+  text-shadow: 0 2px 4px rgba(29, 78, 216, 0.1);
+}
+
+.supervisor-dashboard-stat-status {
+  font-size: 12px;
+  color: #43be83;
+  font-weight: 500;
+  display: block;
+  margin-top: 4px;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.supervisor-dashboard-stat-status-positive {
+  color: #43be83;
+}
+
+.supervisor-dashboard-stat-card:hover .supervisor-dashboard-stat-status {
+  color: #059669;
+}
+
+/* ICONOS CON EFECTOS 3D ESPECTACULARES */
+.supervisor-dashboard-stat-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(145deg, #e8f4fd, #dbeafe);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 3px 8px rgba(59, 130, 246, 0.15);
+}
+
+.supervisor-dashboard-stat-card:hover .supervisor-dashboard-stat-icon-wrapper {
+  background: linear-gradient(145deg, #3b82f6, #2563eb);
+  transform: scale(1.1) rotate(8deg);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+}
+
+.supervisor-dashboard-stat-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  filter: brightness(0.8);
+}
+
+.supervisor-dashboard-stat-card:hover .supervisor-dashboard-stat-icon {
+  filter: brightness(1.2) drop-shadow(0 2px 4px rgba(255, 255, 255, 0.3));
+  transform: scale(1.1);
+}
+
+/* Sección de gráficos CON EFECTOS 3D */
+.supervisor-dashboard-charts-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding: 0 30px 30px;
+}
+
+/* Gráfico principal CON EFECTOS 3D */
+.supervisor-dashboard-chart-container {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.supervisor-dashboard-chart-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(139, 92, 246, 0.03),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.supervisor-dashboard-chart-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.supervisor-dashboard-chart-container:hover::before {
+  opacity: 1;
+}
+
+.supervisor-dashboard-chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.supervisor-dashboard-chart-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.supervisor-dashboard-chart-container:hover .supervisor-dashboard-chart-title {
+  color: #8b5cf6;
+}
+
+.supervisor-dashboard-chart-filter {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  font-size: 14px;
+  color: #374151;
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 1;
+}
+
+.supervisor-dashboard-chart-filter:hover {
+  background: linear-gradient(145deg, #f0f8ff, #ffffff);
+  border-color: #3b82f6;
+  color: #3b82f6;
+  transform: translateY(-1px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.supervisor-dashboard-chart-filter:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.supervisor-dashboard-chart-content {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.supervisor-dashboard-line-chart {
+  width: 100%;
+  height: 100%;
+}
+
+.supervisor-dashboard-chart-label {
+  fill: #6b7280;
+  font-size: 12px;
+  font-family: "Nunito", sans-serif;
+}
+
+/* Panel de reportes CON EFECTOS 3D */
+.supervisor-dashboard-reports-panel {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.supervisor-dashboard-reports-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(16, 185, 129, 0.03),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.supervisor-dashboard-reports-panel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.supervisor-dashboard-reports-panel:hover::before {
+  opacity: 1;
+}
+
+.supervisor-dashboard-panel-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 20px 0;
+  font-family: "Nunito", sans-serif;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.supervisor-dashboard-reports-panel:hover .supervisor-dashboard-panel-title {
+  color: #10b981;
+}
+
+.supervisor-dashboard-fiscalizador-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.supervisor-dashboard-fiscalizador-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.supervisor-dashboard-fiscalizador-item:hover {
+  background: linear-gradient(145deg, #f0fdf4, #ffffff);
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.1);
+}
+
+.supervisor-dashboard-fiscalizador-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.supervisor-dashboard-fiscalizador-item:hover
+  .supervisor-dashboard-fiscalizador-avatar {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.supervisor-dashboard-fiscalizador-info {
+  flex: 1;
+}
+
+.supervisor-dashboard-fiscalizador-nombre {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.supervisor-dashboard-fiscalizador-item:hover
+  .supervisor-dashboard-fiscalizador-nombre {
+  color: #047857;
+}
+
+.supervisor-dashboard-fiscalizador-reportes {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 2px 0 0 0;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.supervisor-dashboard-fiscalizador-item:hover
+  .supervisor-dashboard-fiscalizador-reportes {
+  color: #059669;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .supervisor-dashboard-content {
+    margin: 15px;
+  }
+
+  .supervisor-dashboard-charts-section {
+    grid-template-columns: 1fr;
+  }
+
+  .supervisor-dashboard-stats-grid {
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .supervisor-dashboard-stat-card {
+    padding: 20px;
+  }
+
+  .supervisor-dashboard-stat-value {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 900px) {
+  .supervisor-dashboard-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .supervisor-dashboard-content {
+    margin: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .supervisor-dashboard-stats-grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .supervisor-dashboard-charts-section {
+    padding: 0 20px 20px;
+  }
+
+  .supervisor-dashboard-stat-value {
+    font-size: 28px;
+  }
+
+  .supervisor-dashboard-content {
+    margin: 8px;
+  }
+
+  /* Reducir efectos en móvil para mejor performance */
+  .supervisor-dashboard-stat-card:hover {
+    transform: translateY(-2px) scale(1.01);
+  }
+
+  .supervisor-dashboard-fiscalizador-item:hover {
+    transform: translateX(2px);
+  }
+}
+
+@media (max-width: 480px) {
+  .supervisor-dashboard-main-container {
+    padding: 0 5px;
+  }
+
+  .supervisor-dashboard-content {
+    margin: 5px;
+  }
+
+  .supervisor-dashboard-stats-grid {
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .supervisor-dashboard-stat-card {
+    padding: 16px;
+  }
+
+  .supervisor-dashboard-stat-value {
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,1152 @@
+/* ESTILOS SUPERVISORES VISTA JEFE DE ÁREA - SIN INTERFERENCIA */
+.vista-jefe-area-supervisores {
+  padding: 20px;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  font-family: "Nunito", sans-serif;
+}
+
+/* CONTENEDOR PRINCIPAL QUE ENVUELVE TODO EL CONTENIDO */
+.vista-jefe-area-supervisores-main-container {
+  background-color: #f8fafc;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  margin-top: 10px;
+}
+
+/* HEADER SECTION CON EFECTOS 3D */
+.vista-jefe-area-supervisores-header-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.vista-jefe-area-supervisores-header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.vista-jefe-area-supervisores-btn-agregar {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.vista-jefe-area-supervisores-btn-agregar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.vista-jefe-area-supervisores-btn-agregar:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+}
+
+.vista-jefe-area-supervisores-btn-agregar:hover::before {
+  left: 100%;
+}
+
+.vista-jefe-area-supervisores-btn-exportar {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.vista-jefe-area-supervisores-btn-exportar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.vista-jefe-area-supervisores-btn-exportar:hover {
+  background: linear-gradient(135deg, #4f46e5, #3730a3);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+.vista-jefe-area-supervisores-btn-exportar:hover::before {
+  left: 100%;
+}
+
+/* STATS CARDS CON EFECTOS 3D ESPECTACULARES */
+.vista-jefe-area-supervisores-stats-cards {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.vista-jefe-area-supervisores-stat-card {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08), 0 3px 10px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  position: relative;
+  min-height: 140px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.vista-jefe-area-supervisores-stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(99, 102, 241, 0.08),
+    transparent
+  );
+  transition: left 0.6s ease;
+  z-index: 0;
+}
+
+.vista-jefe-area-supervisores-stat-card:hover {
+  background: linear-gradient(145deg, #f8fafc, #ffffff);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12), 0 8px 25px rgba(0, 0, 0, 0.08);
+  border-color: rgba(99, 102, 241, 0.2);
+}
+
+.vista-jefe-area-supervisores-stat-card:hover::before {
+  left: 100%;
+}
+
+.vista-jefe-area-supervisores-stat-card h3 {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.vista-jefe-area-supervisores-stat-card:hover h3 {
+  color: #8b5cf6;
+}
+
+.vista-jefe-area-supervisores-stat-card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.vista-jefe-area-supervisores-stat-card-left {
+  flex: 1;
+}
+
+.vista-jefe-area-supervisores-stat-card p {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1f2937;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.vista-jefe-area-supervisores-stat-card:hover p {
+  color: #6366f1;
+}
+
+.vista-jefe-area-supervisores-stat-card .vista-jefe-area-supervisores-sub-text {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.vista-jefe-area-supervisores-stat-card
+  .vista-jefe-area-supervisores-sub-text.green {
+  color: #10b981;
+}
+
+.vista-jefe-area-supervisores-stat-card
+  .vista-jefe-area-supervisores-sub-text.blue {
+  color: #3b82f6;
+}
+
+.vista-jefe-area-supervisores-stat-card:hover
+  .vista-jefe-area-supervisores-sub-text.green {
+  color: #059669;
+}
+
+.vista-jefe-area-supervisores-stat-card:hover
+  .vista-jefe-area-supervisores-sub-text.blue {
+  color: #1d4ed8;
+}
+
+.vista-jefe-area-supervisores-stat-card-icon {
+  width: 55px;
+  height: 55px;
+  margin-left: 15px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.1));
+}
+
+.vista-jefe-area-supervisores-stat-card:hover
+  .vista-jefe-area-supervisores-stat-card-icon {
+  transform: scale(1.1) rotate(5deg);
+  filter: drop-shadow(0 6px 15px rgba(0, 0, 0, 0.2));
+}
+
+/* SUPERVISOR INFO SECTION CON EFECTOS 3D */
+.vista-jefe-area-supervisores-supervisor-info-section {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08), 0 3px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.vista-jefe-area-supervisores-supervisor-info-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(99, 102, 241, 0.02),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vista-jefe-area-supervisores-supervisor-info-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12), 0 6px 20px rgba(0, 0, 0, 0.08);
+  border-color: rgba(99, 102, 241, 0.15);
+}
+
+.vista-jefe-area-supervisores-supervisor-info-section:hover::before {
+  opacity: 1;
+}
+
+.vista-jefe-area-supervisores-supervisor-info-header {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 20px;
+  font-family: "Nunito", sans-serif;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.vista-jefe-area-supervisores-supervisor-info-section:hover
+  .vista-jefe-area-supervisores-supervisor-info-header {
+  color: #6366f1;
+}
+
+.vista-jefe-area-supervisores-supervisor-profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: linear-gradient(145deg, #f8fafc, #ffffff);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+.vista-jefe-area-supervisores-supervisor-profile:hover {
+  background: linear-gradient(145deg, #f0f8ff, #ffffff);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.15);
+  transform: translateY(-2px);
+  border-color: rgba(99, 102, 241, 0.2);
+}
+
+.vista-jefe-area-supervisores-supervisor-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vista-jefe-area-supervisores-supervisor-profile:hover
+  .vista-jefe-area-supervisores-supervisor-avatar {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.vista-jefe-area-supervisores-supervisor-details {
+  flex: 1;
+}
+
+.vista-jefe-area-supervisores-supervisor-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 5px;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.vista-jefe-area-supervisores-supervisor-profile:hover
+  .vista-jefe-area-supervisores-supervisor-name {
+  color: #6366f1;
+}
+
+.vista-jefe-area-supervisores-supervisor-title {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 2px;
+  font-family: "Nunito", sans-serif;
+}
+
+.vista-jefe-area-supervisores-supervisor-contact {
+  font-size: 12px;
+  color: #6b7280;
+  font-family: "Nunito", sans-serif;
+}
+
+.vista-jefe-area-supervisores-supervisor-status {
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+  color: #065f46;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
+}
+
+.vista-jefe-area-supervisores-supervisor-profile:hover
+  .vista-jefe-area-supervisores-supervisor-status {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.vista-jefe-area-supervisores-supervisor-since {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 10px;
+  font-family: "Nunito", sans-serif;
+}
+
+/* SUPERVISOR STATS CON EFECTOS 3D ESPECTACULARES */
+.vista-jefe-area-supervisores-supervisor-stats {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.vista-jefe-area-supervisores-supervisor-stat {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  padding: 24px;
+  border-radius: 16px;
+  text-align: center;
+  flex: 1;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.vista-jefe-area-supervisores-supervisor-stat::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.vista-jefe-area-supervisores-supervisor-stat:hover::before {
+  left: 100%;
+}
+
+.vista-jefe-area-supervisores-supervisor-stat:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+  border-color: transparent;
+}
+
+.vista-jefe-area-supervisores-supervisor-stat.blue:hover {
+  box-shadow: 0 12px 35px rgba(59, 130, 246, 0.4);
+  border-color: #3b82f6;
+}
+
+.vista-jefe-area-supervisores-supervisor-stat.green:hover {
+  box-shadow: 0 12px 35px rgba(16, 185, 129, 0.4);
+  border-color: #10b981;
+}
+
+.vista-jefe-area-supervisores-supervisor-stat.purple:hover {
+  box-shadow: 0 12px 35px rgba(139, 92, 246, 0.4);
+  border-color: #8b5cf6;
+}
+
+.vista-jefe-area-supervisores-supervisor-stat-title {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 8px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.vista-jefe-area-supervisores-supervisor-stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 5px;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.vista-jefe-area-supervisores-supervisor-stat-subtitle {
+  font-size: 11px;
+  color: #6b7280;
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+}
+
+.vista-jefe-area-supervisores-supervisor-stat.green
+  .vista-jefe-area-supervisores-supervisor-stat-value {
+  color: #10b981;
+}
+
+.vista-jefe-area-supervisores-supervisor-stat.blue
+  .vista-jefe-area-supervisores-supervisor-stat-value {
+  color: #3b82f6;
+}
+
+.vista-jefe-area-supervisores-supervisor-stat.purple
+  .vista-jefe-area-supervisores-supervisor-stat-value {
+  color: #8b5cf6;
+}
+
+.vista-jefe-area-supervisores-supervisor-stat:hover
+  .vista-jefe-area-supervisores-supervisor-stat-value {
+  transform: scale(1.15);
+}
+
+.vista-jefe-area-supervisores-supervisor-stat.blue:hover
+  .vista-jefe-area-supervisores-supervisor-stat-value {
+  color: #1d4ed8;
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.vista-jefe-area-supervisores-supervisor-stat.green:hover
+  .vista-jefe-area-supervisores-supervisor-stat-value {
+  color: #059669;
+  text-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+}
+
+.vista-jefe-area-supervisores-supervisor-stat.purple:hover
+  .vista-jefe-area-supervisores-supervisor-stat-value {
+  color: #7c3aed;
+  text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+}
+
+/* FISCALIZADORES SECTION CON EFECTOS 3D */
+.vista-jefe-area-supervisores-fiscalizadores-section {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08), 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.vista-jefe-area-supervisores-fiscalizadores-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(99, 102, 241, 0.02),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vista-jefe-area-supervisores-fiscalizadores-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12), 0 6px 20px rgba(0, 0, 0, 0.08);
+  border-color: rgba(99, 102, 241, 0.15);
+}
+
+.vista-jefe-area-supervisores-fiscalizadores-section:hover::before {
+  opacity: 1;
+}
+
+.vista-jefe-area-supervisores-fiscalizadores-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.vista-jefe-area-supervisores-fiscalizadores-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.vista-jefe-area-supervisores-fiscalizadores-section:hover
+  .vista-jefe-area-supervisores-fiscalizadores-header
+  h3 {
+  color: #6366f1;
+}
+
+.vista-jefe-area-supervisores-search-filter {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.vista-jefe-area-supervisores-search-input {
+  padding: 10px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+  width: 200px;
+  transition: all 0.3s ease;
+  background: linear-gradient(145deg, #ffffff, #f9fafb);
+}
+
+.vista-jefe-area-supervisores-search-input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  transform: scale(1.02);
+}
+
+.vista-jefe-area-supervisores-filter-select {
+  padding: 10px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+  background: linear-gradient(145deg, #ffffff, #f9fafb);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.vista-jefe-area-supervisores-filter-select:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* TABLA CON EFECTOS SUTILES PARA EVITAR LAG */
+.vista-jefe-area-supervisores-fiscalizadores-table {
+  width: 100%;
+  border-collapse: collapse;
+  position: relative;
+  z-index: 1;
+}
+
+.vista-jefe-area-supervisores-fiscalizadores-table th {
+  background: linear-gradient(145deg, #f8fafc, #f1f5f9);
+  padding: 16px 12px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+  border-bottom: 2px solid #e2e8f0;
+  font-family: "Nunito", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.vista-jefe-area-supervisores-fiscalizadores-table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.2s ease;
+}
+
+.vista-jefe-area-supervisores-fiscalizadores-table tbody tr {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.vista-jefe-area-supervisores-fiscalizadores-table tbody tr:hover {
+  background: linear-gradient(145deg, #f8fafc, #ffffff);
+  transform: translateX(3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.vista-jefe-area-supervisores-fiscalizadores-table
+  tbody
+  tr:hover
+  .vista-jefe-area-supervisores-fiscalizador-name {
+  color: #6366f1;
+  font-weight: 700;
+}
+
+.vista-jefe-area-supervisores-fiscalizadores-table
+  tbody
+  tr:hover
+  .vista-jefe-area-supervisores-status-badge.activo {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  transform: scale(1.05);
+}
+
+.vista-jefe-area-supervisores-fiscalizadores-table
+  tbody
+  tr:hover
+  .vista-jefe-area-supervisores-status-badge.inactivo {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  transform: scale(1.05);
+}
+
+.vista-jefe-area-supervisores-fiscalizadores-table
+  tbody
+  tr:hover
+  .vista-jefe-area-supervisores-efficiency-text {
+  font-weight: 700;
+  color: #10b981;
+}
+
+.vista-jefe-area-supervisores-fiscalizador-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vista-jefe-area-supervisores-fiscalizador-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vista-jefe-area-supervisores-fiscalizadores-table
+  tbody
+  tr:hover
+  .vista-jefe-area-supervisores-fiscalizador-avatar {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.vista-jefe-area-supervisores-fiscalizador-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.vista-jefe-area-supervisores-fiscalizador-name {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 14px;
+  margin-bottom: 2px;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.2s ease;
+}
+
+.vista-jefe-area-supervisores-fiscalizador-email {
+  font-size: 12px;
+  color: #6b7280;
+  font-family: "Nunito", sans-serif;
+}
+
+.vista-jefe-area-supervisores-status-badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  min-width: 70px;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.2s ease;
+}
+
+.vista-jefe-area-supervisores-status-badge.activo {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.vista-jefe-area-supervisores-status-badge.inactivo {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.vista-jefe-area-supervisores-efficiency-bar {
+  width: 70px;
+  height: 8px;
+  background-color: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 4px;
+  transition: all 0.2s ease;
+}
+
+.vista-jefe-area-supervisores-efficiency-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #059669);
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.vista-jefe-area-supervisores-efficiency-text {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.2s ease;
+}
+
+.vista-jefe-area-supervisores-activity-text {
+  font-size: 14px;
+  color: #1f2937;
+  font-weight: 500;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.2s ease;
+}
+
+/* RESPONSIVE PERFECTO Y PROFESIONAL */
+@media (max-width: 1400px) {
+  .vista-jefe-area-supervisores {
+    padding: 18px;
+  }
+
+  .vista-jefe-area-supervisores-main-container {
+    padding: 22px;
+  }
+
+  .vista-jefe-area-supervisores-stats-cards {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .vista-jefe-area-supervisores {
+    padding: 16px;
+  }
+
+  .vista-jefe-area-supervisores-main-container {
+    padding: 20px;
+  }
+
+  .vista-jefe-area-supervisores-stats-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .vista-jefe-area-supervisores-stat-card {
+    padding: 20px;
+    min-height: 120px;
+  }
+
+  .vista-jefe-area-supervisores-stat-card p {
+    font-size: 28px;
+  }
+
+  .vista-jefe-area-supervisores-stat-card-icon {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .vista-jefe-area-supervisores-stats-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .vista-jefe-area-supervisores-supervisor-stats {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .vista-jefe-area-supervisores-fiscalizadores-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .vista-jefe-area-supervisores-search-filter {
+    justify-content: center;
+  }
+
+  .vista-jefe-area-supervisores-supervisor-info-section,
+  .vista-jefe-area-supervisores-fiscalizadores-section {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vista-jefe-area-supervisores {
+    padding: 12px;
+  }
+
+  .vista-jefe-area-supervisores-main-container {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .vista-jefe-area-supervisores-stat-card {
+    padding: 16px;
+    min-height: 100px;
+  }
+
+  .vista-jefe-area-supervisores-stat-card p {
+    font-size: 24px;
+  }
+
+  .vista-jefe-area-supervisores-stat-card-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .vista-jefe-area-supervisores-header-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .vista-jefe-area-supervisores-btn-agregar,
+  .vista-jefe-area-supervisores-btn-exportar {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  .vista-jefe-area-supervisores-supervisor-profile {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .vista-jefe-area-supervisores-search-input {
+    width: 100%;
+  }
+
+  .vista-jefe-area-supervisores-fiscalizadores-table {
+    font-size: 13px;
+  }
+
+  .vista-jefe-area-supervisores-fiscalizadores-table th,
+  .vista-jefe-area-supervisores-fiscalizadores-table td {
+    padding: 12px 8px;
+  }
+
+  /* Efectos reducidos para móvil */
+  .vista-jefe-area-supervisores-stat-card:hover {
+    transform: translateY(-3px) scale(1.01);
+  }
+
+  .vista-jefe-area-supervisores-supervisor-stat:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+
+  .vista-jefe-area-supervisores-fiscalizadores-table tbody tr:hover {
+    transform: translateX(2px);
+  }
+}
+
+@media (max-width: 640px) {
+  .vista-jefe-area-supervisores {
+    padding: 10px;
+  }
+
+  .vista-jefe-area-supervisores-main-container {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .vista-jefe-area-supervisores-header-section {
+    margin-bottom: 20px;
+  }
+
+  .vista-jefe-area-supervisores-header-buttons {
+    justify-content: center;
+  }
+
+  .vista-jefe-area-supervisores-search-filter {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .vista-jefe-area-supervisores-search-input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .vista-jefe-area-supervisores {
+    padding: 8px;
+  }
+
+  .vista-jefe-area-supervisores-main-container {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .vista-jefe-area-supervisores-stat-card {
+    padding: 12px;
+    min-height: 90px;
+  }
+
+  .vista-jefe-area-supervisores-stat-card p {
+    font-size: 20px;
+  }
+
+  .vista-jefe-area-supervisores-stat-card h3 {
+    font-size: 12px;
+  }
+
+  .vista-jefe-area-supervisores-stat-card-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .vista-jefe-area-supervisores-supervisor-info-section,
+  .vista-jefe-area-supervisores-fiscalizadores-section {
+    padding: 16px;
+  }
+
+  .vista-jefe-area-supervisores-supervisor-info-header,
+  .vista-jefe-area-supervisores-fiscalizadores-header h3 {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  .vista-jefe-area-supervisores-supervisor-avatar {
+    width: 48px;
+    height: 48px;
+  }
+
+  .vista-jefe-area-supervisores-supervisor-name {
+    font-size: 16px;
+  }
+
+  .vista-jefe-area-supervisores-supervisor-title {
+    font-size: 12px;
+  }
+
+  .vista-jefe-area-supervisores-supervisor-contact {
+    font-size: 10px;
+  }
+
+  .vista-jefe-area-supervisores-supervisor-stat {
+    padding: 16px;
+  }
+
+  .vista-jefe-area-supervisores-supervisor-stat-value {
+    font-size: 24px;
+  }
+
+  .vista-jefe-area-supervisores-supervisor-stat-title {
+    font-size: 10px;
+  }
+
+  .vista-jefe-area-supervisores-fiscalizadores-table {
+    font-size: 12px;
+  }
+
+  .vista-jefe-area-supervisores-fiscalizadores-table th,
+  .vista-jefe-area-supervisores-fiscalizadores-table td {
+    padding: 8px 6px;
+  }
+
+  .vista-jefe-area-supervisores-fiscalizador-avatar {
+    width: 28px;
+    height: 28px;
+  }
+
+  .vista-jefe-area-supervisores-fiscalizador-name {
+    font-size: 12px;
+  }
+
+  .vista-jefe-area-supervisores-fiscalizador-email {
+    font-size: 10px;
+  }
+
+  .vista-jefe-area-supervisores-status-badge {
+    padding: 4px 8px;
+    font-size: 10px;
+    min-width: 50px;
+  }
+
+  .vista-jefe-area-supervisores-efficiency-bar {
+    width: 50px;
+    height: 6px;
+  }
+
+  .vista-jefe-area-supervisores-efficiency-text {
+    font-size: 10px;
+  }
+
+  .vista-jefe-area-supervisores-activity-text {
+    font-size: 12px;
+  }
+
+  /* Efectos mínimos en móviles pequeños */
+  .vista-jefe-area-supervisores-stat-card:hover {
+    transform: translateY(-2px) scale(1.005);
+  }
+
+  .vista-jefe-area-supervisores-supervisor-stat:hover {
+    transform: translateY(-2px) scale(1.005);
+  }
+
+  .vista-jefe-area-supervisores-fiscalizadores-table tbody tr:hover {
+    transform: translateX(1px);
+  }
+}
+
+@media (max-width: 360px) {
+  .vista-jefe-area-supervisores {
+    padding: 6px;
+  }
+
+  .vista-jefe-area-supervisores-main-container {
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .vista-jefe-area-supervisores-stat-card {
+    padding: 10px;
+    min-height: 80px;
+  }
+
+  .vista-jefe-area-supervisores-stat-card p {
+    font-size: 18px;
+  }
+
+  .vista-jefe-area-supervisores-stat-card h3 {
+    font-size: 11px;
+  }
+
+  .vista-jefe-area-supervisores-stat-card-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .vista-jefe-area-supervisores-btn-agregar,
+  .vista-jefe-area-supervisores-btn-exportar {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .vista-jefe-area-supervisores-supervisor-info-section,
+  .vista-jefe-area-supervisores-fiscalizadores-section {
+    padding: 12px;
+  }
+
+  .vista-jefe-area-supervisores-supervisor-stat {
+    padding: 12px;
+  }
+
+  .vista-jefe-area-supervisores-supervisor-stat-value {
+    font-size: 20px;
+  }
+
+  .vista-jefe-area-supervisores-fiscalizadores-table th,
+  .vista-jefe-area-supervisores-fiscalizadores-table td {
+    padding: 6px 4px;
+  }
+
+  .vista-jefe-area-supervisores-fiscalizador-avatar {
+    width: 24px;
+    height: 24px;
+  }
+
+  .vista-jefe-area-supervisores-search-input,
+  .vista-jefe-area-supervisores-filter-select {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}

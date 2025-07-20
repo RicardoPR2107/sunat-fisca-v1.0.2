@@ -3,34 +3,545 @@
   height: 100vh;
 }
 
-.sidebar {
-  width: 250px;
-  background: linear-gradient(to bottom, #007bff, #0056b3);
+.fiscalizador-sidebar {
+  width: 200px;
+  background: linear-gradient(135deg, #1e3a8a, #1e40af, #2563eb);
   color: white;
   padding: 20px 0;
+  transition: all 0.3s ease;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
-.logo img {
-  width: 150px;
-  margin: 0 0 20px 20px;
+.fiscalizador-sidebar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.05),
+    transparent,
+    rgba(0, 0, 0, 0.05)
+  );
+  pointer-events: none;
 }
 
-.nav-item {
-  display: block;
-  padding: 10px 20px;
-  color: white;
+.fiscalizador-sidebar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.2)
+  );
+}
+
+.fiscalizador-logo {
+  padding: 0 20px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.fiscalizador-logo img {
+  width: 160px;
+  margin: 0;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.fiscalizador-logo:hover img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
+}
+
+nav {
+  position: relative;
+  z-index: 2;
+}
+
+.fiscalizador-nav-item {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   font-family: "Nunito", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  margin: 4px 12px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
 }
 
-.nav-item:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+.fiscalizador-nav-item::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  margin-right: 12px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  filter: brightness(1) contrast(1);
 }
 
-.content {
+.fiscalizador-nav-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
+  );
+  transition: width 0.3s ease;
+  border-radius: 12px;
+}
+
+.fiscalizador-nav-item:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.08)
+  );
+  color: rgba(255, 255, 255, 0.95);
+  transform: translateX(8px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fiscalizador-nav-item:hover::after {
+  width: 100%;
+}
+
+.fiscalizador-nav-item:hover::before {
+  transform: scale(1.1);
+  filter: brightness(1.2) contrast(1.1);
+}
+
+.fiscalizador-nav-item.active {
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
+  color: #1e40af;
+  font-weight: 600;
+  transform: translateX(12px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.fiscalizador-nav-item.active::before {
+  transform: scale(1.15);
+  filter: brightness(1) contrast(1);
+}
+
+.fiscalizador-nav-item.active::after {
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(30, 64, 175, 0.1),
+    rgba(30, 64, 175, 0.05)
+  );
+}
+
+/* Íconos por defecto (blanco) */
+.fiscalizador-nav-item:nth-child(1)::before {
+  background-image: url("../../../Imagenes/Icono1.png"); /* Dashboard */
+}
+
+.fiscalizador-nav-item:nth-child(2)::before {
+  background-image: url("../../../Imagenes/Icono2.png"); /* Registrar */
+}
+
+.fiscalizador-nav-item:nth-child(3)::before {
+  background-image: url("../../../Imagenes/Icono3.png"); /* Configuración */
+}
+
+/* Íconos en estado active (color #0181E2) */
+.fiscalizador-nav-item.active:nth-child(1)::before {
+  background-image: url("../../../Imagenes/Icono1.1.png"); /* Dashboard */
+}
+
+.fiscalizador-nav-item.active:nth-child(2)::before {
+  background-image: url("../../../Imagenes/Icono2.1.png"); /* Registrar */
+}
+
+.fiscalizador-nav-item.active:nth-child(3)::before {
+  background-image: url("../../../Imagenes/Icono3.1.png"); /* Configuración */
+}
+
+.fiscalizador-main {
   flex: 1;
-  padding: 20px;
-  background-color: #f0f2f5;
+  display: flex;
+  flex-direction: column;
+}
+
+.fiscalizador-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
+  border-bottom: 1px solid #e5e7eb;
+  height: 75px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.fiscalizador-header::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1e40af, #2563eb, #3b82f6);
+}
+
+.header-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  max-width: 70%;
+}
+
+.header-title h2 {
+  font-size: 32px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+
+.header-title p {
+  font-size: 15px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  color: #6b7280;
+  margin: 4px 0 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header-profile {
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-width: 280px;
+  padding: 8px 16px;
+  margin-left: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 64, 175, 0.05),
+    rgba(59, 130, 246, 0.05)
+  );
+  border-radius: 12px;
+  border: 1px solid rgba(30, 64, 175, 0.1);
+  transition: all 0.3s ease;
+}
+
+.header-profile:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 64, 175, 0.08),
+    rgba(59, 130, 246, 0.08)
+  );
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.15);
+  transform: translateY(-1px);
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(30, 64, 175, 0.2);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-profile:hover .profile-icon {
+  transform: scale(1.05);
+  border-color: rgba(30, 64, 175, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.profile-name {
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  margin-right: 20px;
+  margin-left: 8px;
+  color: #1f2937;
+}
+
+.profile-dropdown {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  padding: 6px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.profile-dropdown:hover {
+  background: rgba(30, 64, 175, 0.1);
+}
+
+.dropdown-arrow {
+  font-size: 14px;
+  display: block;
+  text-align: center;
+  color: #1e40af;
+  transition: all 0.3s ease;
+}
+
+.profile-dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+  color: #1e3a8a;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  min-width: 130px;
+  z-index: 1000;
+  text-align: center;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
+  border: 1px solid #e5e7eb;
+  border-bottom: none;
+  border-right: none;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.dropdown-menu button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: none;
+  text-align: center;
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  color: #374151;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.dropdown-menu button:hover {
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.fiscalizador-content {
+  flex: 1;
+  padding: 12px;
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
   overflow-y: auto;
+  overflow-x: hidden;
+  max-height: calc(100vh - 75px);
+  box-sizing: border-box;
+}
+
+/* RESPONSIVE DESIGN PARA EL SIDEBAR FISCALIZADOR */
+@media (max-width: 1200px) {
+  .fiscalizador-sidebar {
+    width: 180px;
+  }
+
+  .fiscalizador-logo img {
+    width: 140px;
+  }
+
+  .fiscalizador-nav-item {
+    font-size: 13px;
+    padding: 12px 16px;
+    margin: 3px 10px;
+  }
+
+  .header-profile {
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .fiscalizador-sidebar {
+    width: 160px;
+  }
+
+  .fiscalizador-logo img {
+    width: 120px;
+  }
+
+  .fiscalizador-nav-item {
+    font-size: 12px;
+    padding: 10px 12px;
+    margin: 2px 8px;
+  }
+
+  .fiscalizador-nav-item::before {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+  }
+
+  .header-profile {
+    min-width: 220px;
+    padding: 6px 12px;
+  }
+
+  .profile-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .profile-name {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .fiscalizador-sidebar {
+    width: 140px;
+  }
+
+  .fiscalizador-nav-item {
+    font-size: 11px;
+    padding: 8px 10px;
+    margin: 2px 6px;
+  }
+
+  .fiscalizador-nav-item::before {
+    width: 14px;
+    height: 14px;
+    margin-right: 6px;
+  }
+
+  .header-title h2 {
+    font-size: 24px;
+  }
+
+  .header-title p {
+    font-size: 12px;
+  }
+
+  .header-profile {
+    min-width: 200px;
+    padding: 6px 10px;
+  }
+
+  .profile-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .profile-name {
+    font-size: 13px;
+    margin-right: 12px;
+  }
+
+  /* Efectos reducidos en móvil */
+  .fiscalizador-nav-item:hover {
+    transform: translateX(4px);
+  }
+
+  .fiscalizador-nav-item.active {
+    transform: translateX(6px);
+  }
+}
+
+@media (max-width: 480px) {
+  .fiscalizador-sidebar {
+    width: 120px;
+  }
+
+  .fiscalizador-logo img {
+    width: 100px;
+  }
+
+  .fiscalizador-nav-item {
+    font-size: 10px;
+    padding: 6px 8px;
+    margin: 2px 4px;
+  }
+
+  .fiscalizador-nav-item::before {
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+  }
+
+  .header-title h2 {
+    font-size: 20px;
+  }
+
+  .header-title p {
+    font-size: 11px;
+  }
+
+  .header-profile {
+    min-width: 180px;
+    padding: 4px 8px;
+  }
+
+  .profile-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .profile-name {
+    font-size: 12px;
+    margin-right: 8px;
+  }
+
+  /* Efectos mínimos en móviles muy pequeños */
+  .fiscalizador-nav-item:hover,
+  .fiscalizador-nav-item.active {
+    transform: translateX(2px);
+  }
 }

@@ -1,68 +1,601 @@
-.dashboard {
-  padding: 20px;
+/* ESTILOS DASHBOARD FISCALIZADOR - SIN INTERFERENCIA */
+.fiscalizador-main-container {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
 
-h2 {
-  font-size: 24px;
+.fiscalizador-dashboard {
   font-family: "Nunito", sans-serif;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.stats {
-  display: flex;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-
-.stat-card {
-  background: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 200px;
-}
-
-.stat-card h3 {
-  font-size: 16px;
-  color: #6c757d;
-  margin-bottom: 5px;
-}
-
-.stat-card p {
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.chart,
-.recent {
-  background: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.chart h3,
-.recent h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.chart-placeholder {
-  height: 200px;
-  background: #e9ecef;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.recent ul {
-  list-style: none;
+  background-color: transparent;
+  margin: 0;
   padding: 0;
 }
 
-.recent li {
-  padding: 5px 0;
-  color: #6c757d;
+.fiscalizador-dashboard-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin: 20px;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Grid de estadísticas - 4 columnas CON EFECTOS 3D */
+.fiscalizador-dashboard-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 24px 24px 20px;
+}
+
+.fiscalizador-dashboard-stat-card {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  border-radius: 12px;
+  padding: 16px 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 85px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.fiscalizador-dashboard-stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.fiscalizador-dashboard-stat-card:hover {
+  background: linear-gradient(145deg, #f8fafc, #ffffff);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15), 0 6px 20px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.fiscalizador-dashboard-stat-card:hover::before {
+  left: 100%;
+}
+
+.fiscalizador-dashboard-stat-card:active {
+  transform: translateY(-2px) scale(0.98);
+  transition: all 0.1s ease;
+}
+
+.fiscalizador-dashboard-stat-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.fiscalizador-dashboard-stat-info {
+  flex: 1;
+  min-width: 0;
+  margin-right: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.fiscalizador-dashboard-stat-title {
+  font-size: 10px;
+  color: #6b7280;
+  font-weight: 500;
+  margin: 0 0 6px 0;
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1.2;
+  word-wrap: break-word;
+  font-family: "Nunito", sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.3s ease;
+}
+
+.fiscalizador-dashboard-stat-card:hover .fiscalizador-dashboard-stat-title {
+  color: #3b82f6;
+}
+
+.fiscalizador-dashboard-stat-value {
+  font-size: 22px !important;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  line-height: 1;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.fiscalizador-dashboard-stat-card:hover .fiscalizador-dashboard-stat-value {
+  color: #1d4ed8;
+  text-shadow: 0 2px 4px rgba(29, 78, 216, 0.1);
+}
+
+/* Estilo específico para texto "Inspección" */
+.fiscalizador-dashboard-stat-value-text {
+  font-size: 22px !important;
+  font-weight: 600;
+  color: #1f2937;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.fiscalizador-dashboard-stat-card:hover
+  .fiscalizador-dashboard-stat-value-text {
+  color: #059669;
+  text-shadow: 0 2px 4px rgba(5, 150, 105, 0.1);
+}
+
+/* Estilo específico para porcentaje "+12%" */
+.fiscalizador-dashboard-stat-value-percentage {
+  font-size: 22px !important;
+  font-weight: 700;
+  color: #10b981;
+  margin: 0;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.fiscalizador-dashboard-stat-card:hover
+  .fiscalizador-dashboard-stat-value-percentage {
+  color: #059669;
+  text-shadow: 0 2px 4px rgba(5, 150, 105, 0.1);
+  transform: scale(1.1);
+}
+
+/* CARD COMPARATIVA CON EFECTOS 3D */
+.fiscalizador-dashboard-stat-comparative {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: flex-start;
+}
+
+.fiscalizador-dashboard-comparative-icon {
+  width: 40px !important;
+  height: 40px !important;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.fiscalizador-dashboard-stat-card:hover
+  .fiscalizador-dashboard-comparative-icon {
+  transform: scale(1.1) rotate(5deg);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+.fiscalizador-dashboard-trend-icon {
+  width: 40px !important;
+  height: 40px !important;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.fiscalizador-dashboard-stat-card:hover .fiscalizador-dashboard-trend-icon {
+  transform: scale(1.1) rotate(-5deg);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+/* ICONOS PRINCIPALES CON EFECTOS 3D */
+.fiscalizador-dashboard-stat-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(145deg, #f8fafc, #e5e7eb);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fiscalizador-dashboard-stat-card:hover
+  .fiscalizador-dashboard-stat-icon-wrapper {
+  background: linear-gradient(145deg, #3b82f6, #2563eb);
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.fiscalizador-dashboard-stat-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  filter: brightness(0.7);
+}
+
+.fiscalizador-dashboard-stat-card:hover .fiscalizador-dashboard-stat-icon {
+  filter: brightness(1) drop-shadow(0 2px 4px rgba(255, 255, 255, 0.3));
+  transform: scale(1.1);
+}
+
+/* Panel de reportes recientes - EFECTOS SIMPLIFICADOS */
+.fiscalizador-dashboard-reports-panel {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  margin: 0 24px 20px 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.fiscalizador-dashboard-reports-panel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.fiscalizador-dashboard-panel-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 18px 0;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.fiscalizador-dashboard-reports-panel:hover
+  .fiscalizador-dashboard-panel-title {
+  color: #3b82f6;
+}
+
+.fiscalizador-dashboard-recent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fiscalizador-dashboard-recent-item {
+  padding: 12px;
+  border-bottom: 1px solid #f3f4f6;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.fiscalizador-dashboard-recent-item:hover {
+  background: #f8fafc;
+  transform: translateX(4px);
+  border-left: 3px solid #3b82f6;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+}
+
+.fiscalizador-dashboard-recent-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.fiscalizador-dashboard-recent-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.fiscalizador-dashboard-recent-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.fiscalizador-dashboard-recent-dates {
+  flex-shrink: 0;
+  text-align: right;
+  margin-left: 16px;
+}
+
+.fiscalizador-dashboard-recent-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 3px 0;
+  line-height: 1.3;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.fiscalizador-dashboard-recent-item:hover .fiscalizador-dashboard-recent-title {
+  color: #1d4ed8;
+}
+
+.fiscalizador-dashboard-recent-subtitle {
+  font-size: 11px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.3;
+  font-style: italic;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.fiscalizador-dashboard-recent-item:hover
+  .fiscalizador-dashboard-recent-subtitle {
+  color: #3b82f6;
+}
+
+.fiscalizador-dashboard-recent-date,
+.fiscalizador-dashboard-recent-status {
+  display: block;
+  font-size: 10px;
+  color: #9ca3af;
+  margin: 0 0 1px 0;
+  line-height: 1.2;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.fiscalizador-dashboard-recent-item:hover .fiscalizador-dashboard-recent-date,
+.fiscalizador-dashboard-recent-item:hover
+  .fiscalizador-dashboard-recent-status {
+  color: #6b7280;
+}
+
+.fiscalizador-dashboard-recent-status {
+  margin-bottom: 0;
+}
+
+/* Gráfico principal CON EFECTOS 3D */
+.fiscalizador-dashboard-chart-container {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  margin: 0 24px 24px 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.fiscalizador-dashboard-chart-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.fiscalizador-dashboard-chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.fiscalizador-dashboard-chart-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.fiscalizador-dashboard-chart-container:hover
+  .fiscalizador-dashboard-chart-title {
+  color: #8b5cf6;
+}
+
+.fiscalizador-dashboard-chart-filter {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  font-size: 12px;
+  color: #374151;
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.fiscalizador-dashboard-chart-filter:hover {
+  background: linear-gradient(145deg, #f0f8ff, #ffffff);
+  border-color: #3b82f6;
+  color: #3b82f6;
+  transform: translateY(-1px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.fiscalizador-dashboard-chart-filter:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.fiscalizador-dashboard-chart-content {
+  width: 100%;
+  height: 350px;
+  display: block;
+  padding: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.fiscalizador-dashboard-chart-container:hover
+  .fiscalizador-dashboard-chart-content {
+  box-shadow: inset 0 2px 8px rgba(139, 92, 246, 0.1);
+}
+
+.fiscalizador-dashboard-line-chart {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.fiscalizador-dashboard-chart-label {
+  fill: #6b7280;
+  font-size: 11px;
+  font-family: "Nunito", sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .fiscalizador-dashboard-content {
+    margin: 15px;
+  }
+
+  .fiscalizador-dashboard-stats-grid {
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .fiscalizador-dashboard-stat-card {
+    padding: 16px;
+  }
+
+  .fiscalizador-dashboard-stat-value {
+    font-size: 24px;
+  }
+
+  .fiscalizador-dashboard-stat-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .fiscalizador-dashboard-stat-icon-wrapper {
+    width: 44px;
+    height: 44px;
+  }
+
+  .fiscalizador-dashboard-reports-panel {
+    margin: 0 20px 20px 20px;
+  }
+
+  .fiscalizador-dashboard-chart-container {
+    margin: 0 20px 20px 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .fiscalizador-dashboard-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .fiscalizador-dashboard-content {
+    margin: 10px;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .fiscalizador-dashboard-stats-grid {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .fiscalizador-dashboard-stat-value {
+    font-size: 20px;
+  }
+
+  .fiscalizador-dashboard-chart-content {
+    height: 280px;
+  }
+
+  .fiscalizador-dashboard-reports-panel {
+    margin: 0 16px 16px 16px;
+  }
+
+  .fiscalizador-dashboard-chart-container {
+    margin: 0 16px 16px 16px;
+  }
+
+  .fiscalizador-dashboard-recent-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fiscalizador-dashboard-recent-dates {
+    text-align: left;
+    margin-left: 0;
+    margin-top: 6px;
+  }
+
+  .fiscalizador-dashboard-content {
+    margin: 8px;
+    border-radius: 10px;
+  }
+
+  /* Reducir efectos en móvil para mejor performance */
+  .fiscalizador-dashboard-stat-card:hover {
+    transform: translateY(-2px) scale(1.01);
+  }
+
+  .fiscalizador-dashboard-recent-item:hover {
+    transform: translateX(2px);
+  }
+}
+
+@media (max-width: 480px) {
+  .fiscalizador-main-container {
+    padding: 0 5px;
+  }
+
+  .fiscalizador-dashboard-stats-grid {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .fiscalizador-dashboard-stat-card {
+    padding: 14px;
+  }
+
+  .fiscalizador-dashboard-stat-value {
+    font-size: 18px;
+  }
+
+  .fiscalizador-dashboard-stat-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .fiscalizador-dashboard-stat-icon-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+
+  .fiscalizador-dashboard-reports-panel {
+    margin: 0 12px 12px 12px;
+    padding: 18px;
+  }
+
+  .fiscalizador-dashboard-chart-container {
+    margin: 0 12px 12px 12px;
+    padding: 18px;
+  }
+
+  .fiscalizador-dashboard-content {
+    margin: 5px;
+    border-radius: 8px;
+  }
+
+  .fiscalizador-dashboard-chart-content {
+    height: 250px;
+  }
 }

@@ -1,0 +1,1008 @@
+/* ESTILOS ESPECÍFICOS PARA CONFIGURACIÓN - VISTA SUPERVISOR */
+.supervisor-configuracion-main-container {
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Nunito", sans-serif;
+}
+
+.supervisor-configuracion-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #f0f2f5;
+  padding: 20px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.supervisor-configuracion-content {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.supervisor-configuracion-cards-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 0;
+  max-width: 100%;
+}
+
+.supervisor-configuracion-left-cards,
+.supervisor-configuracion-right-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Estilos generales de las tarjetas CON EFECTOS 3D PROFESIONALES */
+.supervisor-configuracion-card1,
+.supervisor-configuracion-card2,
+.supervisor-configuracion-card3 {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08), 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.supervisor-configuracion-card1::before,
+.supervisor-configuracion-card2::before,
+.supervisor-configuracion-card3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(99, 102, 241, 0.08),
+    transparent
+  );
+  transition: left 0.6s ease;
+  z-index: 0;
+}
+
+.supervisor-configuracion-card1:hover,
+.supervisor-configuracion-card2:hover,
+.supervisor-configuracion-card3:hover {
+  background: linear-gradient(145deg, #f8fafc, #ffffff);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12), 0 8px 25px rgba(0, 0, 0, 0.08);
+  border-color: rgba(99, 102, 241, 0.2);
+}
+
+.supervisor-configuracion-card1:hover::before,
+.supervisor-configuracion-card2:hover::before,
+.supervisor-configuracion-card3:hover::before {
+  left: 100%;
+}
+
+.supervisor-configuracion-card-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+.supervisor-configuracion-card-icon {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.1));
+}
+
+.supervisor-configuracion-card1:hover .supervisor-configuracion-card-icon,
+.supervisor-configuracion-card2:hover .supervisor-configuracion-card-icon,
+.supervisor-configuracion-card3:hover .supervisor-configuracion-card-icon {
+  transform: scale(1.1) rotate(3deg);
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+}
+
+.supervisor-configuracion-card-title {
+  flex: 1;
+}
+
+.supervisor-configuracion-card-title h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 6px 0;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.supervisor-configuracion-card1:hover .supervisor-configuracion-card-title h3,
+.supervisor-configuracion-card2:hover .supervisor-configuracion-card-title h3,
+.supervisor-configuracion-card3:hover .supervisor-configuracion-card-title h3 {
+  color: #6366f1;
+}
+
+.supervisor-configuracion-card-title p {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.supervisor-configuracion-card1:hover .supervisor-configuracion-card-title p,
+.supervisor-configuracion-card2:hover .supervisor-configuracion-card-title p,
+.supervisor-configuracion-card3:hover .supervisor-configuracion-card-title p {
+  color: #8b5cf6;
+}
+
+/* Tarjeta 1: Perfil del Supervisor */
+.supervisor-configuracion-card1 {
+  min-height: 420px;
+}
+
+.supervisor-configuracion-card1 label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+  font-family: "Nunito", sans-serif;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.supervisor-configuracion-card1:hover label {
+  color: #4f46e5;
+}
+
+.supervisor-configuracion-card1 input[type="text"],
+.supervisor-configuracion-card1 input[type="email"],
+.supervisor-configuracion-card1 input[type="tel"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 16px;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(145deg, #f9fafb, #ffffff);
+  position: relative;
+  z-index: 1;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
+  box-sizing: border-box;
+}
+
+.supervisor-configuracion-card1 input:focus {
+  outline: none;
+  border-color: #6366f1;
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1),
+    0 4px 15px rgba(99, 102, 241, 0.15);
+}
+
+.supervisor-configuracion-card1 input:hover {
+  border-color: #a5b4fc;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(99, 102, 241, 0.1);
+}
+
+.supervisor-configuracion-update-button {
+  width: 100%;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 8px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  box-sizing: border-box;
+}
+
+.supervisor-configuracion-update-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.supervisor-configuracion-update-button:hover {
+  background: linear-gradient(135deg, #4f46e5, #3730a3);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+.supervisor-configuracion-update-button:hover::before {
+  left: 100%;
+}
+
+.supervisor-configuracion-update-button:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
+/* Tarjeta 2: Notificaciones */
+.supervisor-configuracion-card2 {
+  min-height: 280px;
+}
+
+.supervisor-configuracion-preference-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #f3f4f6;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.supervisor-configuracion-preference-item:last-child {
+  border-bottom: none;
+}
+
+.supervisor-configuracion-preference-item:hover {
+  background: rgba(99, 102, 241, 0.02);
+  padding: 20px 15px;
+  margin: 0 -15px;
+  border-radius: 10px;
+}
+
+.supervisor-configuracion-preference-text {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.supervisor-configuracion-preference-text strong {
+  display: block;
+  font-size: 16px;
+  color: #111827;
+  margin-bottom: 6px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.supervisor-configuracion-preference-item:hover
+  .supervisor-configuracion-preference-text
+  strong {
+  color: #6366f1;
+}
+
+.supervisor-configuracion-preference-text p {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.4;
+  font-family: "Nunito", sans-serif;
+}
+
+/* Toggle switch CON EFECTOS 3D */
+.supervisor-configuracion-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+
+.supervisor-configuracion-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.supervisor-configuracion-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(145deg, #d1d5db, #e5e7eb);
+  border-radius: 28px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.supervisor-configuracion-slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  border-radius: 50%;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.supervisor-configuracion-switch
+  input:checked
+  + .supervisor-configuracion-slider {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1),
+    0 0 15px rgba(99, 102, 241, 0.3);
+}
+
+.supervisor-configuracion-switch
+  input:checked
+  + .supervisor-configuracion-slider:before {
+  transform: translateX(22px);
+  background: linear-gradient(145deg, #ffffff, #f1f5f9);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+}
+
+.supervisor-configuracion-switch:hover .supervisor-configuracion-slider {
+  transform: scale(1.05);
+}
+
+/* Tarjeta 3: Seguridad */
+.supervisor-configuracion-card3 {
+  min-height: 650px;
+  display: flex;
+  flex-direction: column;
+}
+
+.supervisor-configuracion-security-icon-container {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.2);
+}
+
+.supervisor-configuracion-card3:hover
+  .supervisor-configuracion-security-icon-container {
+  background: linear-gradient(135deg, #fde68a, #fbbf24);
+  transform: scale(1.1) rotate(3deg);
+  box-shadow: 0 6px 20px rgba(251, 191, 36, 0.3);
+}
+
+.supervisor-configuracion-security-content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  flex-grow: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.supervisor-configuracion-password-field1 label,
+.supervisor-configuracion-password-field2 label,
+.supervisor-configuracion-password-field3 label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.supervisor-configuracion-card3:hover
+  .supervisor-configuracion-password-field1
+  label,
+.supervisor-configuracion-card3:hover
+  .supervisor-configuracion-password-field2
+  label,
+.supervisor-configuracion-card3:hover
+  .supervisor-configuracion-password-field3
+  label {
+  color: #dc2626;
+}
+
+.supervisor-configuracion-password-field1 input[type="password"],
+.supervisor-configuracion-password-field2 input[type="password"],
+.supervisor-configuracion-password-field3 input[type="password"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 0;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(145deg, #f9fafb, #ffffff);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
+  box-sizing: border-box;
+}
+
+.supervisor-configuracion-password-field1 input[type="password"]:focus,
+.supervisor-configuracion-password-field2 input[type="password"]:focus,
+.supervisor-configuracion-password-field3 input[type="password"]:focus {
+  outline: none;
+  border-color: #dc2626;
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.1),
+    0 4px 15px rgba(220, 38, 38, 0.15);
+}
+
+.supervisor-configuracion-password-field1 input[type="password"]:hover,
+.supervisor-configuracion-password-field2 input[type="password"]:hover,
+.supervisor-configuracion-password-field3 input[type="password"]:hover {
+  border-color: #fca5a5;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(220, 38, 38, 0.1);
+}
+
+.supervisor-configuracion-requirements-box {
+  background: linear-gradient(145deg, #eff6ff, #dbeafe);
+  border: 2px solid #bfdbfe;
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+}
+
+.supervisor-configuracion-card3:hover
+  .supervisor-configuracion-requirements-box {
+  background: linear-gradient(145deg, #dbeafe, #bfdbfe);
+  border-color: #93c5fd;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.15);
+}
+
+.supervisor-configuracion-requirements-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e40af;
+  margin-bottom: 12px;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.supervisor-configuracion-card3:hover
+  .supervisor-configuracion-requirements-title {
+  color: #1d4ed8;
+}
+
+.supervisor-configuracion-requirements-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.supervisor-configuracion-requirements-list li {
+  font-size: 14px;
+  color: #3730a3;
+  padding: 6px 0;
+  padding-left: 20px;
+  position: relative;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.supervisor-configuracion-requirements-list li:before {
+  content: "●";
+  position: absolute;
+  left: 0;
+  color: #dc2626;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.supervisor-configuracion-card3:hover
+  .supervisor-configuracion-requirements-list
+  li {
+  color: #1e1b4b;
+  transform: translateX(3px);
+}
+
+.supervisor-configuracion-card3:hover
+  .supervisor-configuracion-requirements-list
+  li:before {
+  transform: scale(1.2);
+}
+
+.supervisor-configuracion-change-password-button {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  margin: 12px 0 0 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+  box-sizing: border-box;
+}
+
+.supervisor-configuracion-change-password-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.supervisor-configuracion-change-password-button:hover {
+  background: linear-gradient(135deg, #b91c1c, #991b1b);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+}
+
+.supervisor-configuracion-change-password-button:hover::before {
+  left: 100%;
+}
+
+.supervisor-configuracion-change-password-button:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
+/* RESPONSIVE PERFECTO Y PROFESIONAL */
+@media (max-width: 1400px) {
+  .supervisor-configuracion-page {
+    padding: 18px;
+  }
+
+  .supervisor-configuracion-cards-wrapper {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .supervisor-configuracion-page {
+    padding: 16px;
+  }
+
+  .supervisor-configuracion-cards-wrapper {
+    gap: 22px;
+  }
+
+  .supervisor-configuracion-card1,
+  .supervisor-configuracion-card2,
+  .supervisor-configuracion-card3 {
+    padding: 24px;
+  }
+
+  .supervisor-configuracion-card3 {
+    min-height: 580px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .supervisor-configuracion-cards-wrapper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .supervisor-configuracion-card3 {
+    min-height: auto;
+  }
+
+  .supervisor-configuracion-left-cards,
+  .supervisor-configuracion-right-cards {
+    gap: 20px;
+  }
+
+  .supervisor-configuracion-card1 input[type="text"],
+  .supervisor-configuracion-card1 input[type="email"],
+  .supervisor-configuracion-card1 input[type="tel"] {
+    width: 100%;
+  }
+
+  .supervisor-configuracion-update-button {
+    width: 100%;
+  }
+
+  .supervisor-configuracion-password-field1 input[type="password"],
+  .supervisor-configuracion-password-field2 input[type="password"],
+  .supervisor-configuracion-password-field3 input[type="password"] {
+    width: 100%;
+  }
+
+  .supervisor-configuracion-change-password-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .supervisor-configuracion-page {
+    padding: 14px;
+  }
+
+  .supervisor-configuracion-cards-wrapper {
+    gap: 18px;
+  }
+
+  .supervisor-configuracion-card1,
+  .supervisor-configuracion-card2,
+  .supervisor-configuracion-card3 {
+    padding: 22px;
+  }
+
+  .supervisor-configuracion-card1 {
+    min-height: 400px;
+  }
+
+  .supervisor-configuracion-card2 {
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .supervisor-configuracion-page {
+    padding: 12px;
+  }
+
+  .supervisor-configuracion-cards-wrapper {
+    gap: 16px;
+  }
+
+  .supervisor-configuracion-card1,
+  .supervisor-configuracion-card2,
+  .supervisor-configuracion-card3 {
+    padding: 20px;
+  }
+
+  .supervisor-configuracion-card-header {
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .supervisor-configuracion-card-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .supervisor-configuracion-card-title h3 {
+    font-size: 18px;
+  }
+
+  .supervisor-configuracion-card-title p {
+    font-size: 13px;
+  }
+
+  .supervisor-configuracion-preference-item {
+    padding: 16px 0;
+  }
+
+  .supervisor-configuracion-preference-text {
+    margin-right: 15px;
+  }
+
+  .supervisor-configuracion-preference-text strong {
+    font-size: 15px;
+  }
+
+  .supervisor-configuracion-preference-text p {
+    font-size: 13px;
+  }
+
+  .supervisor-configuracion-switch {
+    width: 45px;
+    height: 25px;
+  }
+
+  .supervisor-configuracion-slider:before {
+    height: 19px;
+    width: 19px;
+    left: 3px;
+    bottom: 3px;
+  }
+
+  .supervisor-configuracion-switch
+    input:checked
+    + .supervisor-configuracion-slider:before {
+    transform: translateX(20px);
+  }
+
+  /* Reducir efectos en móviles para mejor rendimiento */
+  .supervisor-configuracion-card1:hover,
+  .supervisor-configuracion-card2:hover,
+  .supervisor-configuracion-card3:hover {
+    transform: translateY(-3px) scale(1.01);
+  }
+
+  .supervisor-configuracion-card1 {
+    min-height: 380px;
+  }
+
+  .supervisor-configuracion-card2 {
+    min-height: 240px;
+  }
+}
+
+@media (max-width: 640px) {
+  .supervisor-configuracion-page {
+    padding: 10px;
+  }
+
+  .supervisor-configuracion-cards-wrapper {
+    gap: 14px;
+  }
+
+  .supervisor-configuracion-card1,
+  .supervisor-configuracion-card2,
+  .supervisor-configuracion-card3 {
+    padding: 18px;
+  }
+
+  .supervisor-configuracion-card-header {
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .supervisor-configuracion-card-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .supervisor-configuracion-card-title h3 {
+    font-size: 16px;
+  }
+
+  .supervisor-configuracion-card-title p {
+    font-size: 12px;
+  }
+
+  .supervisor-configuracion-card1 label {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .supervisor-configuracion-card1 input[type="text"],
+  .supervisor-configuracion-card1 input[type="email"],
+  .supervisor-configuracion-card1 input[type="tel"] {
+    padding: 12px 14px;
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .supervisor-configuracion-update-button {
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+
+  .supervisor-configuracion-card1 {
+    min-height: 360px;
+  }
+
+  .supervisor-configuracion-card2 {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .supervisor-configuracion-page {
+    padding: 8px;
+  }
+
+  .supervisor-configuracion-cards-wrapper {
+    gap: 12px;
+  }
+
+  .supervisor-configuracion-card1,
+  .supervisor-configuracion-card2,
+  .supervisor-configuracion-card3 {
+    padding: 16px;
+  }
+
+  .supervisor-configuracion-card-header {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .supervisor-configuracion-card-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .supervisor-configuracion-card-title h3 {
+    font-size: 15px;
+  }
+
+  .supervisor-configuracion-card-title p {
+    font-size: 11px;
+  }
+
+  .supervisor-configuracion-card1 label {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .supervisor-configuracion-card1 input[type="text"],
+  .supervisor-configuracion-card1 input[type="email"],
+  .supervisor-configuracion-card1 input[type="tel"] {
+    padding: 10px 12px;
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+
+  .supervisor-configuracion-update-button {
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+
+  .supervisor-configuracion-preference-item {
+    padding: 14px 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .supervisor-configuracion-preference-text {
+    margin-right: 0;
+  }
+
+  .supervisor-configuracion-preference-text strong {
+    font-size: 14px;
+  }
+
+  .supervisor-configuracion-preference-text p {
+    font-size: 12px;
+  }
+
+  .supervisor-configuracion-security-content {
+    gap: 18px;
+  }
+
+  .supervisor-configuracion-password-field1 input[type="password"],
+  .supervisor-configuracion-password-field2 input[type="password"],
+  .supervisor-configuracion-password-field3 input[type="password"] {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .supervisor-configuracion-requirements-box {
+    padding: 14px;
+  }
+
+  .supervisor-configuracion-requirements-title {
+    font-size: 14px;
+  }
+
+  .supervisor-configuracion-requirements-list li {
+    font-size: 12px;
+    padding: 4px 0;
+  }
+
+  .supervisor-configuracion-change-password-button {
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+
+  .supervisor-configuracion-card1 {
+    min-height: 340px;
+  }
+
+  .supervisor-configuracion-card2 {
+    min-height: 200px;
+  }
+
+  /* Efectos mínimos en móviles muy pequeños */
+  .supervisor-configuracion-card1:hover,
+  .supervisor-configuracion-card2:hover,
+  .supervisor-configuracion-card3:hover {
+    transform: translateY(-2px) scale(1.005);
+  }
+
+  .supervisor-configuracion-update-button:hover,
+  .supervisor-configuracion-change-password-button:hover {
+    transform: translateY(-2px) scale(1.01);
+  }
+}
+
+@media (max-width: 360px) {
+  .supervisor-configuracion-page {
+    padding: 6px;
+  }
+
+  .supervisor-configuracion-cards-wrapper {
+    gap: 10px;
+  }
+
+  .supervisor-configuracion-card1,
+  .supervisor-configuracion-card2,
+  .supervisor-configuracion-card3 {
+    padding: 14px;
+  }
+
+  .supervisor-configuracion-card-header {
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .supervisor-configuracion-card-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .supervisor-configuracion-card-title h3 {
+    font-size: 14px;
+  }
+
+  .supervisor-configuracion-card-title p {
+    font-size: 10px;
+  }
+
+  .supervisor-configuracion-card1 input[type="text"],
+  .supervisor-configuracion-card1 input[type="email"],
+  .supervisor-configuracion-card1 input[type="tel"] {
+    padding: 8px 10px;
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .supervisor-configuracion-update-button {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .supervisor-configuracion-password-field1 input[type="password"],
+  .supervisor-configuracion-password-field2 input[type="password"],
+  .supervisor-configuracion-password-field3 input[type="password"] {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .supervisor-configuracion-change-password-button {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .supervisor-configuracion-card1 {
+    min-height: 320px;
+  }
+
+  .supervisor-configuracion-card2 {
+    min-height: 180px;
+  }
+
+  .supervisor-configuracion-requirements-box {
+    padding: 12px;
+  }
+
+  .supervisor-configuracion-requirements-title {
+    font-size: 13px;
+  }
+
+  .supervisor-configuracion-requirements-list li {
+    font-size: 11px;
+  }
+}

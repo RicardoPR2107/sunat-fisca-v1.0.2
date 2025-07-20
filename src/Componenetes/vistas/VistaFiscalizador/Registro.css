@@ -1,68 +1,793 @@
-.registrar {
-  padding: 20px;
-}
-
-h2 {
-  font-size: 24px;
-  font-family: "Nunito", sans-serif;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-p {
-  color: #6c757d;
-  margin-bottom: 20px;
-}
-
-table {
+/* ESTILOS REGISTRO FISCALIZADOR - SIN INTERFERENCIA */
+.fiscalizador-registro-main-container {
+  background-color: #f8f9fa;
+  min-height: 100vh;
   width: 100%;
-  border-collapse: collapse;
-  background: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  overflow-x: hidden;
+}
+
+.fiscalizador-registro {
+  font-family: "Nunito", sans-serif;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.fiscalizador-registro-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin: 20px;
+  padding: 30px;
   overflow: hidden;
 }
 
-th,
-td {
-  padding: 12px;
-  text-align: left;
-  border-bottom: 1px solid #dee2e6;
+/* Controls Section CON EFECTOS 3D */
+.fiscalizador-registro-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 20px;
 }
 
-th {
-  background-color: #007bff;
-  color: white;
+.fiscalizador-registro-date-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
 }
 
-td button {
-  padding: 5px 10px;
-  margin-right: 5px;
+.fiscalizador-registro-date-prev,
+.fiscalizador-registro-date-next {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #d1d5db;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  color: #6b7280;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.fiscalizador-registro-date-prev::before,
+.fiscalizador-registro-date-next::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(59, 130, 246, 0.2),
+    transparent
+  );
+  transition: left 0.4s ease;
+}
+
+.fiscalizador-registro-date-prev:hover,
+.fiscalizador-registro-date-next:hover {
+  background: linear-gradient(145deg, #f0f8ff, #ffffff);
+  border-color: #3b82f6;
+  color: #3b82f6;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(59, 130, 246, 0.2),
+    0 5px 15px rgba(59, 130, 246, 0.1);
+}
+
+.fiscalizador-registro-date-prev:hover::before,
+.fiscalizador-registro-date-next:hover::before {
+  left: 100%;
+}
+
+.fiscalizador-registro-date-selector {
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  min-width: 160px;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.fiscalizador-registro-date-selector::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(59, 130, 246, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.fiscalizador-registro-date-selector:hover {
+  background: linear-gradient(145deg, #f0f8ff, #ffffff);
+  border-color: #3b82f6;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(59, 130, 246, 0.15),
+    0 5px 15px rgba(59, 130, 246, 0.1);
+}
+
+.fiscalizador-registro-date-selector:hover::before {
+  left: 100%;
+}
+
+.fiscalizador-registro-date-text {
+  font-weight: 600;
+  color: #1f2328;
+  position: relative;
+  z-index: 1;
+}
+
+.fiscalizador-registro-date-today {
+  color: #3b82f6;
+  font-weight: 500;
+  background: #dbeafe;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.fiscalizador-registro-date-arrow {
+  color: #6b7280;
+  margin-left: auto;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.fiscalizador-registro-date-selector:hover .fiscalizador-registro-date-arrow {
+  transform: rotate(180deg);
+  color: #3b82f6;
+}
+
+.fiscalizador-registro-search-add {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.fiscalizador-registro-search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.fiscalizador-registro-search-input {
+  width: 300px;
+  height: 40px;
+  padding: 0 45px 0 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  font-family: "Nunito", sans-serif;
+}
+
+.fiscalizador-registro-search-input:focus {
+  border-color: #3b82f6;
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1),
+    0 8px 25px rgba(59, 130, 246, 0.15);
+}
+
+.fiscalizador-registro-search-button {
+  position: absolute;
+  right: 10px;
+  background: none;
   border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #6b7280;
+  transition: all 0.3s ease;
+  padding: 4px;
   border-radius: 4px;
+}
+
+.fiscalizador-registro-search-button:hover {
+  color: #3b82f6;
+  background: #f0f8ff;
+  transform: scale(1.2);
+}
+
+.fiscalizador-registro-add-button {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 6px 15px rgba(59, 130, 246, 0.3);
+  font-family: "Nunito", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.fiscalizador-registro-add-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.fiscalizador-registro-add-button:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.4);
+}
+
+.fiscalizador-registro-add-button:hover::before {
+  left: 100%;
+}
+
+/* Table Section - EFECTOS OPTIMIZADOS */
+.fiscalizador-registro-table-section {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.fiscalizador-registro-table-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(59, 130, 246, 0.03),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.fiscalizador-registro-table-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.fiscalizador-registro-table-section:hover::before {
+  opacity: 1;
+}
+
+.fiscalizador-registro-section-title {
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  background: linear-gradient(135deg, #f8fafc, #ffffff);
+  position: relative;
+  z-index: 1;
+}
+
+.fiscalizador-registro-section-title h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2328;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+}
+
+.fiscalizador-registro-table-container {
+  overflow-x: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.fiscalizador-registro-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 2px;
+}
+
+.fiscalizador-registro-table thead th {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  padding: 15px 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+  font-family: "Nunito", sans-serif;
+}
+
+.fiscalizador-registro-table thead th:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+.fiscalizador-registro-table thead th:last-child {
+  border-radius: 0 8px 8px 0;
+}
+
+.fiscalizador-registro-table tbody td {
+  padding: 15px 12px;
+  font-size: 14px;
+  color: #1f2328;
+  background: white;
+  transition: all 0.15s ease;
+  font-family: "Nunito", sans-serif;
+}
+
+/* HOVER SUAVE SIN 3D - OPTIMIZADO PARA PERFORMANCE */
+.fiscalizador-registro-table-row {
+  transition: all 0.15s ease;
   cursor: pointer;
 }
 
-td button:first-child {
-  background-color: #007bff;
-  color: white;
+.fiscalizador-registro-table-row:hover td {
+  background: #f8fafc;
 }
 
-td button:last-child {
-  background-color: #dc3545;
-  color: white;
+.fiscalizador-registro-table-row:hover td:first-child {
+  border-radius: 6px 0 0 6px;
 }
 
-.pagination {
-  margin-top: 20px;
-  text-align: right;
+.fiscalizador-registro-table-row:hover td:last-child {
+  border-radius: 0 6px 6px 0;
 }
 
-.pagination button {
-  padding: 5px 10px;
-  margin-left: 5px;
-  border: 1px solid #dee2e6;
-  border-radius: 4px;
-  background-color: white;
+.fiscalizador-registro-checkbox-column {
+  width: 50px;
+  text-align: center;
+}
+
+.fiscalizador-registro-checkbox-column input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
   cursor: pointer;
+  accent-color: #3b82f6;
+}
+
+.fiscalizador-registro-id-cell {
+  font-weight: 600;
+  color: #3b82f6;
+}
+
+.fiscalizador-registro-description-cell {
+  color: #6b7280;
+  font-style: italic;
+}
+
+.fiscalizador-registro-actions {
+  white-space: nowrap;
+}
+
+.fiscalizador-registro-edit-button,
+.fiscalizador-registro-delete-button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: all 0.2s ease;
+  font-family: "Nunito", sans-serif;
+}
+
+.fiscalizador-registro-edit-button {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+}
+
+.fiscalizador-registro-edit-button:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.fiscalizador-registro-delete-button {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+}
+
+.fiscalizador-registro-delete-button:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+/* Pagination */
+.fiscalizador-registro-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-top: 1px solid #e5e7eb;
+  position: relative;
+  z-index: 1;
+}
+
+.fiscalizador-registro-pagination-info {
+  font-size: 14px;
+  color: #6b7280;
+  font-family: "Nunito", sans-serif;
+}
+
+.fiscalizador-registro-pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.fiscalizador-registro-pagination-button,
+.fiscalizador-registro-pagination-number {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  background: white;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "Nunito", sans-serif;
+}
+
+.fiscalizador-registro-pagination-button:hover,
+.fiscalizador-registro-pagination-number:hover {
+  background: #f0f8ff;
+  border-color: #3b82f6;
+  color: #3b82f6;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+}
+
+.fiscalizador-registro-pagination-number.active {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+/* Date Picker CON EFECTOS 3D */
+.fiscalizador-registro-date-picker {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 10px 25px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 300px;
+  padding: 20px;
+  transform: scale(0.95);
+  opacity: 0;
+  animation: fiscalizadorDatePickerShow 0.2s ease forwards;
+}
+
+@keyframes fiscalizadorDatePickerShow {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.fiscalizador-registro-date-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background: transparent;
+}
+
+.fiscalizador-registro-date-picker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.fiscalizador-registro-date-picker-header button {
+  background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+  border: 1px solid #e5e7eb;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #6b7280;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fiscalizador-registro-date-picker-header button:hover {
+  background: linear-gradient(145deg, #f0f8ff, #ffffff);
+  border-color: #3b82f6;
+  color: #3b82f6;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.fiscalizador-registro-date-picker-header span {
+  font-weight: 600;
+  color: #1f2328;
+  font-family: "Nunito", sans-serif;
+}
+
+.fiscalizador-registro-date-picker-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-bottom: 10px;
+}
+
+.fiscalizador-registro-weekday {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  padding: 8px 4px;
+  font-family: "Nunito", sans-serif;
+}
+
+.fiscalizador-registro-date-picker-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.fiscalizador-registro-calendar-day {
+  aspect-ratio: 1;
+  border: none;
+  background: #f8f9fa;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #1f2328;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  font-family: "Nunito", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.fiscalizador-registro-calendar-day::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(59, 130, 246, 0.2),
+    transparent
+  );
+  transition: left 0.3s ease;
+}
+
+.fiscalizador-registro-calendar-day:hover {
+  background: #f0f8ff;
+  color: #3b82f6;
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+}
+
+.fiscalizador-registro-calendar-day:hover::before {
+  left: 100%;
+}
+
+.fiscalizador-registro-calendar-day.other-month {
+  color: #9ca3af;
+}
+
+.fiscalizador-registro-calendar-day.today {
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(29, 78, 216, 0.2);
+}
+
+.fiscalizador-registro-calendar-day.selected {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.fiscalizador-registro-date-picker-footer {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.fiscalizador-registro-today-button {
+  background: linear-gradient(145deg, #f3f4f6, #e5e7eb);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Nunito", sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fiscalizador-registro-today-button:hover {
+  background: linear-gradient(145deg, #f0f8ff, #ffffff);
+  color: #3b82f6;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .fiscalizador-registro-content {
+    margin: 15px;
+    padding: 25px;
+  }
+
+  .fiscalizador-registro-search-input {
+    width: 250px;
+  }
+}
+
+@media (max-width: 900px) {
+  .fiscalizador-registro-controls {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+
+  .fiscalizador-registro-search-add {
+    justify-content: space-between;
+  }
+
+  .fiscalizador-registro-content {
+    margin: 10px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .fiscalizador-registro-content {
+    margin: 8px;
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .fiscalizador-registro-controls {
+    gap: 12px;
+  }
+
+  .fiscalizador-registro-search-add {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .fiscalizador-registro-search-input {
+    width: 100%;
+  }
+
+  .fiscalizador-registro-table-container {
+    overflow-x: scroll;
+  }
+
+  .fiscalizador-registro-pagination {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .fiscalizador-registro-pagination-controls {
+    justify-content: center;
+  }
+
+  /* Reducir efectos en móvil para mejor performance */
+  .fiscalizador-registro-date-prev:hover,
+  .fiscalizador-registro-date-next:hover {
+    transform: translateY(-1px) scale(1.02);
+  }
+
+  .fiscalizador-registro-date-selector:hover {
+    transform: translateY(-1px) scale(1.01);
+  }
+
+  .fiscalizador-registro-add-button:hover {
+    transform: translateY(-1px) scale(1.02);
+  }
+}
+
+@media (max-width: 480px) {
+  .fiscalizador-registro-main-container {
+    padding: 0 5px;
+  }
+
+  .fiscalizador-registro-content {
+    margin: 5px;
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .fiscalizador-registro-controls {
+    gap: 10px;
+  }
+
+  .fiscalizador-registro-date-control {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .fiscalizador-registro-search-add {
+    gap: 10px;
+  }
+
+  .fiscalizador-registro-date-picker {
+    width: 280px;
+    padding: 15px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.95);
+  }
+
+  .fiscalizador-registro-section-title {
+    padding: 15px 18px;
+  }
+
+  .fiscalizador-registro-section-title h3 {
+    font-size: 16px;
+  }
+
+  .fiscalizador-registro-table thead th,
+  .fiscalizador-registro-table tbody td {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
 }

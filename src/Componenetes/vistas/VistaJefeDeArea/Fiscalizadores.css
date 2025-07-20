@@ -1,0 +1,1235 @@
+/* ESTILOS FISCALIZADORES VISTA JEFE DE ÁREA - SIN INTERFERENCIA */
+.vista-jefe-area-fiscalizadores {
+  padding: 20px;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  font-family: "Nunito", sans-serif;
+}
+
+/* CONTENEDOR PRINCIPAL QUE ENVUELVE TODO EL CONTENIDO */
+.vista-jefe-area-fiscalizadores-main-container {
+  background-color: #f8fafc;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  margin-top: 10px;
+}
+
+/* HEADER SECTION CON EFECTOS 3D */
+.vista-jefe-area-fiscalizadores-header-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+.vista-jefe-area-fiscalizadores-header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.vista-jefe-area-fiscalizadores-btn-agregar {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.vista-jefe-area-fiscalizadores-btn-agregar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.vista-jefe-area-fiscalizadores-btn-agregar:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+}
+
+.vista-jefe-area-fiscalizadores-btn-agregar:hover::before {
+  left: 100%;
+}
+
+.vista-jefe-area-fiscalizadores-btn-exportar {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.vista-jefe-area-fiscalizadores-btn-exportar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.vista-jefe-area-fiscalizadores-btn-exportar:hover {
+  background: linear-gradient(135deg, #4f46e5, #3730a3);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+.vista-jefe-area-fiscalizadores-btn-exportar:hover::before {
+  left: 100%;
+}
+
+/* STATS CARDS CON EFECTOS 3D ESPECTACULARES */
+.vista-jefe-area-fiscalizadores-stats-cards {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.vista-jefe-area-fiscalizadores-stat-card {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08), 0 3px 10px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  position: relative;
+  min-height: 140px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.vista-jefe-area-fiscalizadores-stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(99, 102, 241, 0.08),
+    transparent
+  );
+  transition: left 0.6s ease;
+  z-index: 0;
+}
+
+.vista-jefe-area-fiscalizadores-stat-card:hover {
+  background: linear-gradient(145deg, #f8fafc, #ffffff);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12), 0 8px 25px rgba(0, 0, 0, 0.08);
+  border-color: rgba(99, 102, 241, 0.2);
+}
+
+.vista-jefe-area-fiscalizadores-stat-card:hover::before {
+  left: 100%;
+}
+
+.vista-jefe-area-fiscalizadores-stat-card h3 {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.vista-jefe-area-fiscalizadores-stat-card:hover h3 {
+  color: #8b5cf6;
+}
+
+.vista-jefe-area-fiscalizadores-stat-card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.vista-jefe-area-fiscalizadores-stat-card-left {
+  flex: 1;
+}
+
+.vista-jefe-area-fiscalizadores-stat-card p {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1f2937;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.vista-jefe-area-fiscalizadores-stat-card:hover p {
+  color: #6366f1;
+}
+
+.vista-jefe-area-fiscalizadores-stat-card
+  .vista-jefe-area-fiscalizadores-sub-text {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.vista-jefe-area-fiscalizadores-stat-card
+  .vista-jefe-area-fiscalizadores-sub-text.green {
+  color: #10b981;
+}
+
+.vista-jefe-area-fiscalizadores-stat-card
+  .vista-jefe-area-fiscalizadores-sub-text.blue {
+  color: #3b82f6;
+}
+
+.vista-jefe-area-fiscalizadores-stat-card
+  .vista-jefe-area-fiscalizadores-sub-text.orange {
+  color: #f59e0b;
+}
+
+.vista-jefe-area-fiscalizadores-stat-card
+  .vista-jefe-area-fiscalizadores-sub-text.red {
+  color: #ef4444;
+}
+
+.vista-jefe-area-fiscalizadores-stat-card:hover
+  .vista-jefe-area-fiscalizadores-sub-text.green {
+  color: #059669;
+}
+
+.vista-jefe-area-fiscalizadores-stat-card:hover
+  .vista-jefe-area-fiscalizadores-sub-text.blue {
+  color: #1d4ed8;
+}
+
+.vista-jefe-area-fiscalizadores-stat-card:hover
+  .vista-jefe-area-fiscalizadores-sub-text.orange {
+  color: #d97706;
+}
+
+.vista-jefe-area-fiscalizadores-stat-card:hover
+  .vista-jefe-area-fiscalizadores-sub-text.red {
+  color: #dc2626;
+}
+
+.vista-jefe-area-fiscalizadores-stat-card-icon {
+  width: 55px;
+  height: 55px;
+  margin-left: 15px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.1));
+}
+
+.vista-jefe-area-fiscalizadores-stat-card:hover
+  .vista-jefe-area-fiscalizadores-stat-card-icon {
+  transform: scale(1.1) rotate(5deg);
+  filter: drop-shadow(0 6px 15px rgba(0, 0, 0, 0.2));
+}
+
+.vista-jefe-area-fiscalizadores-stat-card-icon.large {
+  width: 70px;
+  height: 70px;
+}
+
+/* FILTROS SECTION CON EFECTOS 3D */
+.vista-jefe-area-fiscalizadores-filtros-section {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08), 0 3px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.vista-jefe-area-fiscalizadores-filtros-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(99, 102, 241, 0.02),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vista-jefe-area-fiscalizadores-filtros-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12), 0 6px 20px rgba(0, 0, 0, 0.08);
+  border-color: rgba(99, 102, 241, 0.15);
+}
+
+.vista-jefe-area-fiscalizadores-filtros-section:hover::before {
+  opacity: 1;
+}
+
+.vista-jefe-area-fiscalizadores-filtros-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.vista-jefe-area-fiscalizadores-filtros-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.vista-jefe-area-fiscalizadores-filtros-section:hover
+  .vista-jefe-area-fiscalizadores-filtros-header
+  h3 {
+  color: #6366f1;
+}
+
+.vista-jefe-area-fiscalizadores-limpiar-filtros {
+  color: #6366f1;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.vista-jefe-area-fiscalizadores-limpiar-filtros:hover {
+  color: #4f46e5;
+  text-decoration: underline;
+  transform: translateX(3px);
+}
+
+.vista-jefe-area-fiscalizadores-filtros-inputs {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 20px;
+  align-items: end;
+  position: relative;
+  z-index: 1;
+}
+
+.vista-jefe-area-fiscalizadores-filtro-group {
+  flex: 1;
+}
+
+.vista-jefe-area-fiscalizadores-filtro-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  margin-bottom: 8px;
+  font-family: "Nunito", sans-serif;
+}
+
+.vista-jefe-area-fiscalizadores-filtro-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s ease;
+  background: linear-gradient(145deg, #ffffff, #f9fafb);
+  max-width: 350px;
+}
+
+.vista-jefe-area-fiscalizadores-filtro-input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  transform: scale(1.02);
+}
+
+.vista-jefe-area-fiscalizadores-filtro-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+  background: linear-gradient(145deg, #ffffff, #f9fafb);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+
+.vista-jefe-area-fiscalizadores-filtro-select:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* FISCALIZADORES SECTION CON EFECTOS 3D */
+.vista-jefe-area-fiscalizadores-fiscalizadores-section {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08), 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.vista-jefe-area-fiscalizadores-fiscalizadores-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(99, 102, 241, 0.02),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vista-jefe-area-fiscalizadores-fiscalizadores-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12), 0 6px 20px rgba(0, 0, 0, 0.08);
+  border-color: rgba(99, 102, 241, 0.15);
+}
+
+.vista-jefe-area-fiscalizadores-fiscalizadores-section:hover::before {
+  opacity: 1;
+}
+
+.vista-jefe-area-fiscalizadores-fiscalizadores-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.vista-jefe-area-fiscalizadores-fiscalizadores-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.vista-jefe-area-fiscalizadores-fiscalizadores-section:hover
+  .vista-jefe-area-fiscalizadores-fiscalizadores-header
+  h3 {
+  color: #6366f1;
+}
+
+.vista-jefe-area-fiscalizadores-mostrar-info {
+  font-size: 14px;
+  color: #6b7280;
+  font-family: "Nunito", sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+/* TABLA CON EFECTOS SUTILES PARA EVITAR LAG */
+.vista-jefe-area-fiscalizadores-fiscalizadores-table {
+  width: 100%;
+  border-collapse: collapse;
+  position: relative;
+  z-index: 1;
+}
+
+.vista-jefe-area-fiscalizadores-fiscalizadores-table th {
+  background: linear-gradient(145deg, #f8fafc, #f1f5f9);
+  padding: 16px 12px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+  border-bottom: 2px solid #e2e8f0;
+  font-family: "Nunito", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.vista-jefe-area-fiscalizadores-fiscalizadores-table td {
+  padding: 18px 12px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.2s ease;
+  vertical-align: middle;
+}
+
+.vista-jefe-area-fiscalizadores-fiscalizadores-table tbody tr {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.vista-jefe-area-fiscalizadores-fiscalizadores-table tbody tr:hover {
+  background: linear-gradient(145deg, #f8fafc, #ffffff);
+  transform: translateX(3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.vista-jefe-area-fiscalizadores-fiscalizador-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vista-jefe-area-fiscalizadores-fiscalizador-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vista-jefe-area-fiscalizadores-fiscalizadores-table
+  tbody
+  tr:hover
+  .vista-jefe-area-fiscalizadores-fiscalizador-avatar {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.vista-jefe-area-fiscalizadores-fiscalizador-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.vista-jefe-area-fiscalizadores-fiscalizador-name {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 14px;
+  margin-bottom: 2px;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.2s ease;
+}
+
+.vista-jefe-area-fiscalizadores-fiscalizador-code {
+  font-size: 12px;
+  color: #6b7280;
+  font-family: "Nunito", sans-serif;
+}
+
+.vista-jefe-area-fiscalizadores-fiscalizadores-table
+  tbody
+  tr:hover
+  .vista-jefe-area-fiscalizadores-fiscalizador-name {
+  color: #6366f1;
+  font-weight: 700;
+}
+
+.vista-jefe-area-fiscalizadores-supervisor-name {
+  font-size: 14px;
+  color: #1f2937;
+  font-weight: 500;
+  font-family: "Nunito", sans-serif;
+}
+
+.vista-jefe-area-fiscalizadores-status-badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  min-width: 70px;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.2s ease;
+}
+
+.vista-jefe-area-fiscalizadores-status-badge.activo {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.vista-jefe-area-fiscalizadores-status-badge.inactivo {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.vista-jefe-area-fiscalizadores-fiscalizadores-table
+  tbody
+  tr:hover
+  .vista-jefe-area-fiscalizadores-status-badge.activo {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  transform: scale(1.05);
+}
+
+.vista-jefe-area-fiscalizadores-fiscalizadores-table
+  tbody
+  tr:hover
+  .vista-jefe-area-fiscalizadores-status-badge.inactivo {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  transform: scale(1.05);
+}
+
+.vista-jefe-area-fiscalizadores-efficiency-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.vista-jefe-area-fiscalizadores-efficiency-bar {
+  width: 70px;
+  height: 8px;
+  background-color: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 4px;
+  transition: all 0.2s ease;
+}
+
+.vista-jefe-area-fiscalizadores-efficiency-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #059669);
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.vista-jefe-area-fiscalizadores-efficiency-text {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.2s ease;
+}
+
+.vista-jefe-area-fiscalizadores-fiscalizadores-table
+  tbody
+  tr:hover
+  .vista-jefe-area-fiscalizadores-efficiency-text {
+  font-weight: 700;
+  color: #10b981;
+}
+
+.vista-jefe-area-fiscalizadores-activity-text {
+  font-size: 14px;
+  color: #1f2937;
+  font-weight: 500;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.2s ease;
+}
+
+.vista-jefe-area-fiscalizadores-fiscalizadores-table
+  tbody
+  tr:hover
+  .vista-jefe-area-fiscalizadores-activity-text {
+  color: #6366f1;
+  font-weight: 600;
+}
+
+/* ACTIONS BUTTONS CON EFECTOS 3D */
+.vista-jefe-area-fiscalizadores-actions-buttons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 300px;
+}
+
+.vista-jefe-area-fiscalizadores-action-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 70px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.vista-jefe-area-fiscalizadores-action-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.4s ease;
+}
+
+.vista-jefe-area-fiscalizadores-action-btn:hover::before {
+  left: 100%;
+}
+
+.vista-jefe-area-fiscalizadores-action-btn.ver {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+}
+
+.vista-jefe-area-fiscalizadores-action-btn.ver:hover {
+  background: linear-gradient(135deg, #1e40af, #1d4ed8);
+  color: white;
+  border-color: #1e40af;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
+}
+
+.vista-jefe-area-fiscalizadores-action-btn.editar {
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.vista-jefe-area-fiscalizadores-action-btn.editar:hover {
+  background: linear-gradient(135deg, #166534, #15803d);
+  color: white;
+  border-color: #166534;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(22, 101, 52, 0.4);
+}
+
+.vista-jefe-area-fiscalizadores-action-btn.reasignar {
+  background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+  color: #7c2d12;
+  border: 1px solid #c4b5fd;
+}
+
+.vista-jefe-area-fiscalizadores-action-btn.reasignar:hover {
+  background: linear-gradient(135deg, #7c2d12, #92400e);
+  color: white;
+  border-color: #7c2d12;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(124, 45, 18, 0.4);
+}
+
+.vista-jefe-area-fiscalizadores-action-btn.desactivar {
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.vista-jefe-area-fiscalizadores-action-btn.desactivar:hover {
+  background: linear-gradient(135deg, #991b1b, #dc2626);
+  color: white;
+  border-color: #991b1b;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(153, 27, 27, 0.4);
+}
+
+.vista-jefe-area-fiscalizadores-action-btn.activar {
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.vista-jefe-area-fiscalizadores-action-btn.activar:hover {
+  background: linear-gradient(135deg, #166534, #15803d);
+  color: white;
+  border-color: #166534;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(22, 101, 52, 0.4);
+}
+
+/* RESPONSIVE PERFECTO Y PROFESIONAL */
+@media (max-width: 1400px) {
+  .vista-jefe-area-fiscalizadores {
+    padding: 18px;
+  }
+
+  .vista-jefe-area-fiscalizadores-main-container {
+    padding: 22px;
+  }
+
+  .vista-jefe-area-fiscalizadores-stats-cards {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .vista-jefe-area-fiscalizadores {
+    padding: 16px;
+  }
+
+  .vista-jefe-area-fiscalizadores-main-container {
+    padding: 20px;
+  }
+
+  .vista-jefe-area-fiscalizadores-stats-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .vista-jefe-area-fiscalizadores-stat-card {
+    padding: 20px;
+    min-height: 120px;
+  }
+
+  .vista-jefe-area-fiscalizadores-stat-card p {
+    font-size: 28px;
+  }
+
+  .vista-jefe-area-fiscalizadores-stat-card-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .vista-jefe-area-fiscalizadores-stat-card-icon.large {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .vista-jefe-area-fiscalizadores-stats-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .vista-jefe-area-fiscalizadores-filtros-inputs {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+
+  .vista-jefe-area-fiscalizadores-filtro-input {
+    max-width: none;
+  }
+
+  .vista-jefe-area-fiscalizadores-filtro-select {
+    min-width: 140px;
+  }
+
+  .vista-jefe-area-fiscalizadores-filtros-section,
+  .vista-jefe-area-fiscalizadores-fiscalizadores-section {
+    padding: 20px;
+  }
+
+  .vista-jefe-area-fiscalizadores-actions-buttons {
+    min-width: 250px;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .vista-jefe-area-fiscalizadores-action-btn {
+    min-width: 60px;
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 900px) {
+  .vista-jefe-area-fiscalizadores {
+    padding: 14px;
+  }
+
+  .vista-jefe-area-fiscalizadores-main-container {
+    padding: 18px;
+  }
+
+  .vista-jefe-area-fiscalizadores-stats-cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .vista-jefe-area-fiscalizadores-filtros-inputs {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .vista-jefe-area-fiscalizadores-filtro-select {
+    min-width: auto;
+  }
+
+  .vista-jefe-area-fiscalizadores-stat-card {
+    padding: 18px;
+    min-height: 110px;
+  }
+
+  .vista-jefe-area-fiscalizadores-stat-card p {
+    font-size: 26px;
+  }
+
+  .vista-jefe-area-fiscalizadores-stat-card h3 {
+    font-size: 13px;
+  }
+
+  .vista-jefe-area-fiscalizadores-fiscalizadores-table {
+    font-size: 13px;
+  }
+
+  .vista-jefe-area-fiscalizadores-fiscalizadores-table th,
+  .vista-jefe-area-fiscalizadores-fiscalizadores-table td {
+    padding: 12px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vista-jefe-area-fiscalizadores {
+    padding: 12px;
+  }
+
+  .vista-jefe-area-fiscalizadores-main-container {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .vista-jefe-area-fiscalizadores-stats-cards {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .vista-jefe-area-fiscalizadores-filtros-inputs {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .vista-jefe-area-fiscalizadores-stat-card {
+    padding: 16px;
+    min-height: 100px;
+  }
+
+  .vista-jefe-area-fiscalizadores-stat-card p {
+    font-size: 24px;
+  }
+
+  .vista-jefe-area-fiscalizadores-stat-card-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .vista-jefe-area-fiscalizadores-stat-card-icon.large {
+    width: 50px;
+    height: 50px;
+  }
+
+  .vista-jefe-area-fiscalizadores-header-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .vista-jefe-area-fiscalizadores-btn-agregar,
+  .vista-jefe-area-fiscalizadores-btn-exportar {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  .vista-jefe-area-fiscalizadores-fiscalizadores-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .vista-jefe-area-fiscalizadores-fiscalizadores-table {
+    font-size: 12px;
+  }
+
+  .vista-jefe-area-fiscalizadores-fiscalizadores-table th,
+  .vista-jefe-area-fiscalizadores-fiscalizadores-table td {
+    padding: 10px 6px;
+  }
+
+  .vista-jefe-area-fiscalizadores-fiscalizador-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .vista-jefe-area-fiscalizadores-actions-buttons {
+    min-width: 200px;
+    gap: 3px;
+  }
+
+  .vista-jefe-area-fiscalizadores-action-btn {
+    min-width: 45px;
+    padding: 5px 8px;
+    font-size: 10px;
+  }
+
+  /* Efectos reducidos para móvil */
+  .vista-jefe-area-fiscalizadores-stat-card:hover {
+    transform: translateY(-3px) scale(1.01);
+  }
+
+  .vista-jefe-area-fiscalizadores-fiscalizadores-table tbody tr:hover {
+    transform: translateX(2px);
+  }
+
+  .vista-jefe-area-fiscalizadores-action-btn:hover {
+    transform: translateY(-1px) scale(1.02);
+  }
+}
+
+@media (max-width: 640px) {
+  .vista-jefe-area-fiscalizadores {
+    padding: 10px;
+  }
+
+  .vista-jefe-area-fiscalizadores-main-container {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .vista-jefe-area-fiscalizadores-header-section {
+    margin-bottom: 20px;
+  }
+
+  .vista-jefe-area-fiscalizadores-header-buttons {
+    justify-content: center;
+  }
+
+  .vista-jefe-area-fiscalizadores-filtros-inputs {
+    gap: 12px;
+  }
+
+  .vista-jefe-area-fiscalizadores-actions-buttons {
+    flex-direction: column;
+    min-width: auto;
+    gap: 4px;
+    align-items: stretch;
+  }
+
+  .vista-jefe-area-fiscalizadores-action-btn {
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .vista-jefe-area-fiscalizadores {
+    padding: 8px;
+  }
+
+  .vista-jefe-area-fiscalizadores-main-container {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .vista-jefe-area-fiscalizadores-stat-card {
+    padding: 12px;
+    min-height: 90px;
+  }
+
+  .vista-jefe-area-fiscalizadores-stat-card p {
+    font-size: 20px;
+  }
+
+  .vista-jefe-area-fiscalizadores-stat-card h3 {
+    font-size: 12px;
+  }
+
+  .vista-jefe-area-fiscalizadores-stat-card-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .vista-jefe-area-fiscalizadores-stat-card-icon.large {
+    width: 42px;
+    height: 42px;
+  }
+
+  .vista-jefe-area-fiscalizadores-filtros-section,
+  .vista-jefe-area-fiscalizadores-fiscalizadores-section {
+    padding: 16px;
+  }
+
+  .vista-jefe-area-fiscalizadores-filtros-header h3,
+  .vista-jefe-area-fiscalizadores-fiscalizadores-header h3 {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  .vista-jefe-area-fiscalizadores-filtro-input,
+  .vista-jefe-area-fiscalizadores-filtro-select {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .vista-jefe-area-fiscalizadores-fiscalizadores-table {
+    font-size: 11px;
+  }
+
+  .vista-jefe-area-fiscalizadores-fiscalizadores-table th,
+  .vista-jefe-area-fiscalizadores-fiscalizadores-table td {
+    padding: 8px 4px;
+  }
+
+  .vista-jefe-area-fiscalizadores-fiscalizador-avatar {
+    width: 28px;
+    height: 28px;
+  }
+
+  .vista-jefe-area-fiscalizadores-fiscalizador-name {
+    font-size: 12px;
+  }
+
+  .vista-jefe-area-fiscalizadores-fiscalizador-code {
+    font-size: 10px;
+  }
+
+  .vista-jefe-area-fiscalizadores-status-badge {
+    padding: 4px 8px;
+    font-size: 10px;
+    min-width: 50px;
+  }
+
+  .vista-jefe-area-fiscalizadores-efficiency-bar {
+    width: 50px;
+    height: 6px;
+  }
+
+  .vista-jefe-area-fiscalizadores-efficiency-text {
+    font-size: 10px;
+  }
+
+  .vista-jefe-area-fiscalizadores-activity-text {
+    font-size: 12px;
+  }
+
+  .vista-jefe-area-fiscalizadores-action-btn {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+
+  /* Efectos mínimos en móviles pequeños */
+  .vista-jefe-area-fiscalizadores-stat-card:hover {
+    transform: translateY(-2px) scale(1.005);
+  }
+
+  .vista-jefe-area-fiscalizadores-fiscalizadores-table tbody tr:hover {
+    transform: translateX(1px);
+  }
+
+  .vista-jefe-area-fiscalizadores-action-btn:hover {
+    transform: translateY(-1px) scale(1.01);
+  }
+}
+
+@media (max-width: 360px) {
+  .vista-jefe-area-fiscalizadores {
+    padding: 6px;
+  }
+
+  .vista-jefe-area-fiscalizadores-main-container {
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .vista-jefe-area-fiscalizadores-stat-card {
+    padding: 10px;
+    min-height: 80px;
+  }
+
+  .vista-jefe-area-fiscalizadores-stat-card p {
+    font-size: 18px;
+  }
+
+  .vista-jefe-area-fiscalizadores-stat-card h3 {
+    font-size: 11px;
+  }
+
+  .vista-jefe-area-fiscalizadores-stat-card-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .vista-jefe-area-fiscalizadores-stat-card-icon.large {
+    width: 36px;
+    height: 36px;
+  }
+
+  .vista-jefe-area-fiscalizadores-btn-agregar,
+  .vista-jefe-area-fiscalizadores-btn-exportar {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .vista-jefe-area-fiscalizadores-filtros-section,
+  .vista-jefe-area-fiscalizadores-fiscalizadores-section {
+    padding: 12px;
+  }
+
+  .vista-jefe-area-fiscalizadores-fiscalizadores-table th,
+  .vista-jefe-area-fiscalizadores-fiscalizadores-table td {
+    padding: 6px 3px;
+  }
+
+  .vista-jefe-area-fiscalizadores-fiscalizador-avatar {
+    width: 24px;
+    height: 24px;
+  }
+
+  .vista-jefe-area-fiscalizadores-filtro-input,
+  .vista-jefe-area-fiscalizadores-filtro-select {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .vista-jefe-area-fiscalizadores-action-btn {
+    padding: 5px 8px;
+    font-size: 9px;
+  }
+}
