@@ -7,6 +7,8 @@ import { TextField } from '@mui/material';
 import { Close } from '@mui/icons-material';
 import "@fontsource/nunito";
 import { getActivityTypes } from '../../../services/activityTypesService';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const Registrar = () => {
   const [selectedItems, setSelectedItems] = useState([]);
@@ -18,6 +20,7 @@ const Registrar = () => {
   const [selectedActivity, setSelectedActivity] = useState("");
   const [description, setDescription] = useState("");
   const [activityTypes, setActivityTypes] = useState([]);
+  const [showSuccessNotification, setShowSuccessNotification] = useState(false);
 
   useEffect(() => {
     const loadActivityTypes = async () => {
@@ -40,6 +43,12 @@ const Registrar = () => {
   const handleAdd = () => {
     // Aquí irá la lógica para añadir el registro
     handleCloseModal();
+    setShowSuccessNotification(true);
+    
+    // Ocultar la notificación después de 3 segundos
+    setTimeout(() => {
+      setShowSuccessNotification(false);
+    }, 3000);
   };
 
   const handleSelectItem = (id) => {
@@ -354,6 +363,15 @@ const Registrar = () => {
               </button>
             </div>
           </div>
+
+          {showSuccessNotification && (
+            <div className="success-notification">
+              <span>Registro añadido</span>
+              <button className="close-btn" onClick={() => setShowSuccessNotification(false)}>
+                <FontAwesomeIcon icon={faTimes} />
+              </button>
+            </div>
+          )}
 
           {/* Table Section */}
           <div className="fiscalizador-registro-table-section">

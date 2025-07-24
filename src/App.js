@@ -18,6 +18,7 @@ import DashboardSupervisor from "./Componenetes/vistas/VistaSupervisor/Dashboard
 import FiscalizadoresSupervisor from "./Componenetes/vistas/VistaSupervisor/Fiscalizadores";
 import ReportesSupervisor from "./Componenetes/vistas/VistaSupervisor/Reportes";
 import ConfiguracionSupervisor from "./Componenetes/vistas/VistaSupervisor/Configuracion";
+import RoleRedirect from "./components/RoleRedirect";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           <Route path="reportes" element={<ReportesSupervisor />} />
           <Route path="configuracion" element={<ConfiguracionSupervisor />} />
         </Route>
+        <Route path="/redirect" element={<RoleRedirect />} />
         <Route
           path="/logout"
           element={<div>Cerrar Sesión (implementar redirección)</div>}

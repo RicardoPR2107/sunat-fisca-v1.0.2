@@ -4,6 +4,7 @@ import "./InicioSesion.css";
 import logoSunat from "../../../Imagenes/Negro-sunat-fisca+.png";
 import { authService } from "../../../services/authService";
 
+
 const InicioSesion = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
@@ -92,38 +93,30 @@ const InicioSesion = () => {
 
     try {
       const response = await authService.login(code.trim(), password.trim());
-      console.log("Respuesta del backend:", response);
+      console.log("Respuesta completa del backend:", response);
+      console.log("Datos del usuario:", {
+        role: response.role,
+        userId: response.userId,
+        success: response.success
+      });
+      console.log("Rol recibido:", response.role);
 
-      if (response.success) {
-        console.log("Login exitoso");
-        const userInfo = getUserRole(response.role);
-        setSuccessMessage(
-          `¡Bienvenido ${userInfo.role}! ${userInfo.emoji} Redirigiendo...`
-        );
-
-        setTimeout(() => {
-          switch (response.role) {
-            case "FISCALIZADOR":
-              console.log("Redirigiendo a dashboard de fiscalizador");
-              navigate("/fiscalizador/dashboard");
-              break;
-            case "JEFE_AREA":
-              console.log("Redirigiendo a dashboard de jefe de área");
-              navigate("/jefe-area/dashboard");
-              break;
-            case "SUPERVISOR":
-              console.log("Redirigiendo a dashboard de supervisor");
-              navigate("/supervisor/dashboard");
-              break;
-            default:
-              console.log("Rol no válido:", response.role);
-              setErrorMessage("Rol no válido");
+        if (response.success) {
+          console.log("Login exitoso");
+          
+          // Redirigir según el código de usuario
+          if (code === '7308') {
+            navigate('/jefe-area/dashboard');
+          } else if (code === '9943') {
+            navigate('/jefe-general/dashboard');
+          } else {
+            navigate('/fiscalizador/dashboard');
           }
-        }, 1500);
-      } else {
-        console.log("Login fallido:", response.message);
-        setErrorMessage(response.message);
+          return;
       }
+
+      console.log("Login fallido:", response.message);
+      setErrorMessage(response.message);
     } catch (error) {
       console.error("Error en login:", error);
       if (error.response) {
